@@ -1,22 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import registerServiceWorker from "./registerServiceWorker";
+import configureStore from "./store/configureStore";
+import { saveState } from './localStorage'
+import "./index.css";
+import App from './App';
 
-import App from './containers/App';
-import store from './store';
+const store = configureStore()
 
-import reportWebVitals from './reportWebVitals';
+store.subscribe	(()=> {
+	saveState({
+		'auth': store.getState().auth
+	})
+})
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+render(
+	<BrowserRouter>
+			<Provider store={store}>
+				<App />
+			</Provider>
+	</BrowserRouter>,
+	document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+registerServiceWorker();

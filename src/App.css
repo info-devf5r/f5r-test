@@ -1,0 +1,680 @@
+@import "~antd/dist/antd.css";
+
+body{
+	font-family: "San Francisco Display Medium" !important;
+}
+
+html {
+  font-family: "San Francisco Display Medium" !important;
+  font-size: 12px;
+
+}
+
+.p{
+	font-family: "San Francisco Display Medium" !important;
+}
+
+.App {
+	padding-left: 56px;
+	padding-right: 56px;
+}
+
+.App-logo {
+	animation: App-logo-spin infinite 20s linear;
+	height: 80px;
+}
+
+.App-header {
+	background-color: #ffffff;
+	width: 100%;
+	height: 100px;
+	padding-top: 26px;
+	color: #595a66;
+	display: flex;
+	align-items: center;
+}
+
+.App-search {
+	width: 30%;
+	height: 43px;
+}
+
+.App-search .ant-input {
+	border-radius: 4px;
+	background-color: #ffffff;
+	border: solid 1px #bbbdcc;
+}
+
+.App-account {
+	margin-left: auto;
+	display: flex;
+}
+
+.App-user-star {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.App-user {
+	margin-bottom: 0;
+	margin-right: 0.75em;
+}
+
+.App-avatar {
+	justify-content: flex-end;
+	margin-left: .5vw;
+}
+
+.App-avatar .ant-avatar-lg {
+	width: 42px;
+	height: 42px;
+	border-radius: 21px;
+	border: solid 2px #595a66;
+}
+
+.App-sign-in {
+	display: flex;
+}
+
+.Following {
+	width: 100%;
+	min-height: 133px;
+	border-radius: 13px;
+	margin-bottom: 30px;
+	margin-top: 80px;
+	background-color: #efeff2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: visible;
+	position: relative;
+}
+
+.Following-avatar {
+	position: absolute;
+	display: flex;
+	top: -20px;
+	left: 50px;
+}
+
+.Following-following {
+	position: absolute;
+	top: 30px;
+	left: 80px;
+}
+
+.Following-avatar .ant-avatar-lg {
+	width: 68px;
+	height: 68px;
+	border-radius: 34px;
+	border: solid 2px #000000;
+	line-height: 80px;
+}
+
+.Following-avatar .ant-avatar-lg.ant-avatar-icon {
+	font-size: 50px;
+	color: black;
+}
+
+.Following-grid {
+	width: 100%;
+	text-align: center;
+	padding-top: 5em;
+	text-transform: uppercase;
+}
+
+.react-bs-table table {
+  margin-bottom: 0;
+  table-layout: auto !important;
+  width: 100%;
+
+}
+
+.tr-string-example {
+	border-bottom: 1px solid black;
+	width: 100%;
+	height: 50px;
+	text-transform: uppercase;
+}
+
+.coin-table-header {
+	width: 100%;
+}
+
+.coin-img-td {
+	width: 5%;
+}
+
+.coin-name-td {
+	width: 15%;
+}
+
+.coin-rating-td {
+	width: 25%;
+}
+
+.App-title {
+	font-size: 1.5em;
+}
+
+.App-intro {
+	font-size: large;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.coin-box {
+	width: 50%;
+	min-height: 133px;
+	margin-bottom: 30px;
+	margin-top: 80px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	overflow: visible;
+	position: relative;
+}
+
+.coin-box-left {
+	flex: 0.25;
+	display: flex;
+	flex-direction: column;
+}
+
+.coin-box-left-image {
+	flex: 1;
+}
+
+.coin-box-left-website {
+	flex: 1;
+	text-align: center;
+	margin-top: 7px;
+}
+
+.coin-box-right {
+	flex: 0.75;
+	display: flex;
+	flex-direction: column;
+	margin-left: 26px;
+}
+
+.coin-box-right-avg {
+	background-color: #f4f4f4;
+	display: flex;
+	border-radius: 4px;
+	flex: 1;
+	padding-top: 13px;
+	padding-bottom: 11px;
+}
+
+.coin-box-right-avg-label {
+	flex: 0.4;
+	padding-left: 10px;
+}
+
+.coin-box-right-avg-rating {
+	flex: 0.6;
+}
+
+.coin-box-right-reviews {
+	display: flex;
+	flex: 1;
+	padding-top: 21px;
+	padding-bottom: 21px;
+}
+
+.coin-box-right-reviews-left {
+	flex: 0.4;
+	padding-left: 10px;
+}
+
+.coin-box-right-reviews-right {
+	flex: 0.6;
+}
+
+.coin-box-right-reviews-breakdown {
+	display: flex;
+	flex: 1;
+}
+
+.coin-box-right-reviews-breakdown-left {
+	flex: 0.4;
+	padding-left: 10px;
+	font-size: 1.1vw;
+}
+
+.coin-box-right-reviews-breakdown-right {
+	flex: 0.6;
+}
+
+.review-box {
+	display: flex;
+	background-color: #f4f4f4;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.review-form {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 20px;
+	width: 100%;
+}
+
+.review-rating {
+	display: flex !important;
+	flex: 1;
+}
+
+.review-rating-stars {
+	align-self: center;
+	width: 40%;
+}
+
+.review-rating-label {
+	align-self: flex-start;
+	margin-right: 10em;
+	width: 20%;
+}
+
+.ant-form-item {
+	margin-bottom: 0px;
+}
+
+.review-bottom-line {
+	display: inline;
+}
+
+.thread {
+	display: flex;
+	background: #f4f4f4;
+	border-radius: 4px;
+	flex-direction: column;
+}
+
+.thread-row {
+	display: flex;
+	padding-left: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 2em;
+	border-bottom: 3px solid white;
+}
+
+.thread-header {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.vote-count {
+	flex: none;
+	align-self: center;
+	padding-right: 2em;
+}
+
+.post {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.post-reply {
+	display: flex;
+	flex-direction: column;
+}
+
+.post-comment {
+	display: flex;
+	padding-left: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 2em;
+}
+
+.post-row {
+	display: flex;
+	flex: 1;
+	margin: 0;
+	height: 1.75em;
+}
+
+.post-row-left {
+	justify-content: flex-start;
+	flex: 1;
+}
+
+.post-row-right {
+	padding-right: 2em;
+	text-align: right;
+	flex: 1;
+}
+
+.comment {
+	background-color: #f4f4f4;
+	border-radius: 4px;
+	border: none;
+}
+
+.comment-row {
+	border-bottom: 3px solid white !important;
+}
+
+.comment-row-sub {
+	border: none !important;
+}
+
+.follow {
+	flex: none;
+	padding-left: 0.2em;
+	align-self: center;
+}
+
+.follow-flag {
+	font-size: 1.2em;
+}
+
+.follow-flag:hover {
+	font-size: 1.2em;
+	color: red;
+}
+
+.header-row {
+	display: flex;
+}
+
+.header-buttons {
+	flex: 0.05;
+	height: 80px;
+}
+
+.header-content {
+	flex: 0.9;
+}
+
+.header-reply {
+	flex: 0.05;
+}
+
+.review {
+	display: flex;
+	background: #f4f4f4;
+	border-radius: 4px;
+	flex-direction: column;
+}
+
+.review-row {
+	display: flex;
+	padding-left: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 2em;
+	border-bottom: 3px solid white;
+}
+
+.review-avatar {
+	width: 5%;
+	margin: 0.5vw;
+}
+
+.review-left {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+}
+
+.review-left-username {
+	justify-content: flex-start;
+	margin: 0.5vw;
+	margin-bottom: 0.1vw;
+}
+
+.review-left-date {
+	justify-content: flex-start;
+	margin: 0.5vw;
+	margin-top: 0.1vw;
+}
+
+.review-left-review {
+	justify-content: flex-start;
+	margin: 0.5vw;
+}
+
+.review-right {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	margin: .5vw;
+	margin-left: 5vw;
+	margin-right: 0;
+}
+
+.review-right-overall {
+	display: flex;
+}
+
+.review-right-overall-label {
+width: 40%;
+font-size: 1vw;
+}
+
+.review-right-overall-rating {
+	justify-content: flex-end;
+}
+
+.review-right-breakdown {
+	display: flex;
+}
+
+.review-right-breakdown-label {
+	width: 40%;
+	font-size: 1vw;
+}
+
+.review-right-breakdown-rating {
+	justify-content: flex-end;
+}
+
+
+.react-autosuggest__container {
+  position: relative;
+	font-family: "San Francisco Display Thin" !important;
+	color: #ababb6;
+	width: 18vw;
+}
+
+.react-autosuggest__input {
+  width: 100%;
+  height: 30px;
+  padding: 10px 20px;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+
+h1 {
+  color: #333;
+  font-weight:normal;
+  font-size:5vw;
+}
+
+.post-title{
+	color: #4a90e2;
+	font-weight: bold;
+	font-size: 1.25vw;
+}
+
+.post-vote{
+	color: #4a90e2;
+	font-size: 1vw;
+}
+
+.bold{
+	font-family: "San Francisco Display Bold";
+	color: #ababb6;
+}
+
+@font-face {
+  font-family: "San Francisco Display Ultralight";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.eot?#iefix) format("embedded-opentype"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff2) format("woff2"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff) format("woff"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: "San Francisco Display Thin";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.eot?#iefix) format("embedded-opentype"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff2) format("woff2"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff) format("woff"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: "San Francisco Display Medium";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.eot?#iefix) format("embedded-opentype"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff2) format("woff2"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff) format("woff"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: "San Francisco Display Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.eot?#iefix) format("embedded-opentype"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff2) format("woff2"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff) format("woff"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: "San Francisco Display Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.eot?#iefix) format("embedded-opentype"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2) format("woff2"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff) format("woff"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.ttf) format("truetype")
+}
+
+h1:nth-child(1) {
+  font-family: "San Francisco Display Ultralight";
+}
+
+h1:nth-child(2) {
+  font-family: "San Francisco Display Thin";
+}
+
+h1:nth-child(3) {
+  font-family: "San Francisco Display Medium";
+}
+
+h1:nth-child(4) {
+  font-family: "San Francisco Display Semibold";
+}
+
+h1:nth-child(5) {
+  font-family: "San Francisco Display Bold";
+}
+
+.follow-column{
+
+	font-size: .8em;
+	letter-spacing: 0.3px;
+
+}
+
+.link-blue{
+	color: #4a90e2;
+	 cursor:pointer;
+}
+
+.ant-modal-content{
+	border: solid 1px #979797;
+	 background-color: #efeff2;
+}
+
+.ant-modal-mask{
+	background-color: rgba(255, 255, 255,1)
+}
+
+.register-modal-top-left{
+	width: 50%;
+	text-align: left;
+	color: #595a66;
+	font-size: 24px;
+  font-weight: bold;
+}
+
+.register-modal-top-right{
+	width: 50%;
+	justify-content: flex-start;
+	display: flex;
+	flex-direction: column;
+}
+
+.register-modal-top-right-top{
+	font-size: 12px;
+	color: #595a66;
+}
+
+.register-modal-top-right-bottom{
+	font-size: 18px;
+	 color: #4a90e2;
+}
+
+.vertical-center-modal{
+	width: 26vw;
+	height: 21vw;
+}
+
+.ant-collapse-borderless > .ant-collapse-item{
+	margin-left: 50px;
+}
