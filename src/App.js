@@ -1,42 +1,33 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import firebase from "firebase";
-import {Helmet} from "react-helmet";
+import React from "react"; 
+
+import { BrowserRouter as Router, Route } from "react-router-dom"; 
+
+import Join from "./components/Join/Join";
+import Chat from "./components/Chat/Chat"; 
+import "./main.css"
+
+import { positions, Provider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 
 
-import Main from "./Main";
+const options = {
+    timeout: 5000,
+    position: positions.MIDDLE
+};
 
-class App extends Component {
-
-	componentWillMount(state) {
-		const config = {
-			apiKey: "AIzaSyDswjCdV5xhNfZZnnexUoje5LEQxskTO2M",
-			authDomain: "coincritic.firebaseapp.com",
-			databaseURL: "https://coincritic.firebaseio.com",
-			projectId: "coincritic",
-			storageBucket: "coincritic.appspot.com",
-			messagingSenderId: "487868920510"
-		};
-
-		firebase.initializeApp(config);
-
-	}
-
-
-	render() {
-		return (
-			<div>
-				<div>
-				<Helmet>
-	<meta charSet="utf-8" />
-	<title>CoinCritic</title>
-</Helmet>
-					<Main />
-				</div>
-			</div>
-		);
-	}
+const App = () => { 
+    
+    return ( 
+        <Provider template={AlertTemplate} {...options}>
+            <Router> 
+                <Route path="/" exact component={Join} />
+                <Route path="/join" exact component={Join} />
+                <Route path="/chat" exact component={Chat} /> 
+            </Router>
+        </Provider>
+    ); 
 }
 
+export default App; 
 
-export default withRouter(App)
+/* User enters data in "/", that data is passed to "/chat" using query-strings" */ 
