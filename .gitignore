@@ -1,8 +1,2 @@
-build/
-.tmp/
-.nyc_output/
-node_modules/
-coverage/
-public/index.html
-
-*.log
+node_modules
+playground
