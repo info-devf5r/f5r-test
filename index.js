@@ -11,16 +11,16 @@ app.use(cors());
 
 const io = require("socket.io")(http);
 
-//To holding users information
+//لعقد معلومات المستخدمين
 const socketsStatus = {};
 
-//config and set handlebars to express
+//التكوين وتعيين المقاود للتعبير
 const customHandlebars = handlebars.create({ layoutsDir: "./views" });
 
 app.engine("handlebars", customHandlebars.engine);
 app.set("view engine", "handlebars");
 
-//enable user access to public folder
+//تمكين وصول المستخدم إلى المجلد العام
 app.use(express.static(__dirname + "/public"));
 
 app.get("/home", (req, res) => {
