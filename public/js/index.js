@@ -99,10 +99,9 @@ const userStatus = {
   }
   
   function toggleConnection(e) {
-    userStatus.online = !userStatus.online;
+    userStatus.online = userStatus.online;
   
-    editButtonClass(e, userStatus.online);
-    emitUserInformation();
+     emitUserInformation();
   }
   
   function toggleMute(e) {
