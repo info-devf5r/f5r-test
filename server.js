@@ -1,55 +1,76 @@
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
+const server = require("http").createServer(app);
+const port = process.env.PORT || 8000;
+const cors = require("cors");
 
-app.use(express.static('public'))
+// const corsOptions = {
+//   origin: "*",
+//   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+// };
 
-const http = require("http").Server(app)
-const serverSocket = require("socket.io")(http)
-const socketsStatus = {};
-const porta = process.env.PORT || 3000
+// app.use(cors(corsOptions));
 
-const host =  `https://f5r-test.herokuapp.com`
-http.listen(porta, function(){
-    const portaStr = porta === 80 ? '' :  ':' + porta
+app.use(cors());
 
-    if (`https://f5r-test.herokuapp.com`) 
-        console.log('Servidor iniciado. Abra o navegador em ' + host)
-    else console.log('Servidor iniciado. Abra o navegador em ' + host + portaStr)
-})
+const io = require("socket.io")(server, {
+  cors: {
+    origin: ["https://beta.mintflick.app", "https://beta.mintflick.app*"],
+    methods: ["GET", "POST"],
+    transports: ["websocket", "polling"],
+    credentials: true,
+  },
+});
 
-app.get("/", (req, resp)=>{
-    resp.sendFile(__dirname + "/index.html")
-})
+//app.use(cors(corsOptions));
 
-serverSocket.on("connection", function (socket){
-    const socketId = socket.id;
-    socketsStatus[socket.id] = {};
-  
-  
-    console.log("connect");
-  
-    socket.on("voice", function (data) {
-  
-      var newData = data.split(";");
-      newData[0] = "data:audio/ogg;";
-      newData = newData[0] + newData[1];
-  
-      for (const id in socketsStatus) {
-  
-        if (id != socketId && !socketsStatus[id].mute && socketsStatus[id].online)
-          socket.broadcast.to(id).emit("send", newData);
-      }
-  
-    });
-  
-    socket.on("userInformation", function (data) {
-      socketsStatus[socketId] = data;
-  
-      serverSocket.sockets.emit("usersUpdate",socketsStatus);
-    });
-  
-  
-    socket.on("disconnect", function () {
-      delete socketsStatus[socketId];
-    });
-})
+// app.options('*', cors(corsOptions));
+
+// const io = require("socket.io")(server, {
+//   cors: {
+//     origin: [
+//       "http://localhost:*",
+//       "https://beta.dbeats.live ",
+//       "https://dbeats.live ",
+//     ],
+//     transports: ["websocket", "polling"],
+//     credentials: true,
+//     allowedHeaders: ["Access-Control-Allow-Origin"],
+//     methods: ["GET", "POST", "PUT"],
+//   },
+//   allowEIO3: true,
+// });
+
+app.get("/", (req, res) => {
+  res.send("Live Viewer Working!");
+});
+
+io.on("connection", (socket) => {
+  let roomId;
+
+  socket.on("joinlivestream", async (room) => {
+    await socket.join(room.toString());
+    roomId = room;
+    console.log(room);
+    console.log(io.sockets.adapter.rooms.get(room).size);
+    let roomSize = io.sockets.adapter.rooms.get(room).size;
+    let details = {
+      room: room,
+      roomSize: roomSize,
+    };
+    socket.emit("count", details);
+    io.to(room).emit("livecount", details);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("disconnected");
+    if (roomId != undefined) {
+      let roomSize = io.sockets.adapter.rooms.get(roomId).size;
+      io.to(roomId).emit("removecount", roomSize);
+    }
+  });
+});
+
+server.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
