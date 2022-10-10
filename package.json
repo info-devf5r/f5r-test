@@ -1,17 +1,17 @@
 {
-  "name": "voice-chat-test",
+  "name": "test-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2",
-    "express-handlebars": "^6.0.2",
+    "express": "^4.17.3",
     "socket.io": "^4.4.1"
   }
 }
