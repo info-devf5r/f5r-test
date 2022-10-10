@@ -13,18 +13,14 @@ const usersDiv = document.getElementById("users");
 usernameInput.value = userStatus.username;
 usernameLabel.innerText = userStatus.username;
 
-
 window.onload = (e) => {
   mainFunction(1000);
 };
 
-var socket = io("ws://localhost:3000");
+var socket = io("https://voice-chat-heroku.herokuapp.com/");
 socket.emit("userInformation", userStatus);
 
-
 function mainFunction(time) {
-
-
   navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
     var madiaRecorder = new MediaRecorder(stream);
     madiaRecorder.start();
@@ -47,11 +43,9 @@ function mainFunction(time) {
 
         var base64String = fileReader.result;
         socket.emit("voice", base64String);
-
       };
 
       madiaRecorder.start();
-
 
       setTimeout(function () {
         madiaRecorder.stop();
@@ -63,14 +57,13 @@ function mainFunction(time) {
     }, time);
   });
 
-
   socket.on("send", function (data) {
     var audio = new Audio(data);
     audio.play();
   });
 
   socket.on("usersUpdate", function (data) {
-    usersDiv.innerHTML = '';
+    usersDiv.innerHTML = "";
     for (const key in data) {
       if (!Object.hasOwnProperty.call(data, key)) continue;
 
@@ -78,16 +71,14 @@ function mainFunction(time) {
       const li = document.createElement("li");
       li.innerText = element.username;
       usersDiv.append(li);
-
     }
   });
-
 }
 
 usernameLabel.onclick = function () {
   usernameDiv.style.display = "block";
   usernameLabel.style.display = "none";
-}
+};
 
 function changeUsername() {
   userStatus.username = usernameInput.value;
@@ -117,14 +108,12 @@ function toggleMicrophone(e) {
   emitUserInformation();
 }
 
-
 function editButtonClass(target, bool) {
   const classList = target.classList;
   classList.remove("enable-btn");
   classList.remove("disable-btn");
 
-  if (bool)
-    return classList.add("enable-btn");
+  if (bool) return classList.add("enable-btn");
 
   classList.add("disable-btn");
 }
