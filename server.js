@@ -6,14 +6,14 @@ app.use(express.static('public'))
 const http = require("http").Server(app)
 const serverSocket = require("socket.io")(http)
 const socketsStatus = {};
-const porta = "https://f5r-test.herokuapp.com" || 3000
+const porta = process.env.PORT || 3000
 
-const host = "https://f5r-test.herokuapp.com"
+const host = process.env.HEROKU_APP_NAME ? `https://f5r-test.herokuapp.com` : "http://localhost"
 
 http.listen(porta, function(){
     const portaStr = porta === 80 ? '' :  ':' + porta
 
-    if ("https://f5r-test.herokuapp.com") 
+    if (process.env.HEROKU_APP_NAME) 
         console.log('Servidor iniciado. Abra o navegador em ' + host)
     else console.log('Servidor iniciado. Abra o navegador em ' + host + portaStr)
 })
