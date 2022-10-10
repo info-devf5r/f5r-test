@@ -26,6 +26,9 @@
     </main>
     
     <div class="chat-form-container">
+	        <button class="control-btn disable-btn" onclick="toggleMicrophone(this)">افتح الميكروفون</button>
+        <button class="control-btn disable-btn" onclick="toggleMute(this)">صامت</button>
+        <button class="control-btn disable-btn" onclick="toggleConnection(this)">اتصل بالانترنت</button>
       <form id="chat-form">
         <input
           id="msg"
@@ -46,5 +49,7 @@
   ></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/main.js"></script>
+  <script src="s/index.js"></script>
+
 </body>
 </html>
