@@ -54,17 +54,17 @@ io.on("connection", function (socket) {
   
   });
 
-//config and set handlebars to express
+//التكوين وتعيين المقاود للتعبير
 const customHandlebars = handlebars.create({ layoutsDir: "./views" });
 
 app.engine("handlebars", customHandlebars.engine);
 app.set("view engine", "handlebars");
 
-//enable user access to public folder 
+//تمكين وصول المستخدم إلى المجلد العام
 app.use("/files", express.static("public"));
 
 app.get("/" , (req , res)=>{
-    res.render("index");
+    res.render("index.html");
 });
 
 http.listen(process.env.PORT || 3000, () => {
