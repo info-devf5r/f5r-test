@@ -8,12 +8,11 @@ const serverSocket = require("socket.io")(http)
 const socketsStatus = {};
 const porta = process.env.PORT || 3000
 
-const host = process.env.HEROKU_APP_NAME ? `https://f5r-test.herokuapp.com` : "http://localhost"
-
+const host =  `https://f5r-test.herokuapp.com`
 http.listen(porta, function(){
     const portaStr = porta === 80 ? '' :  ':' + porta
 
-    if (process.env.HEROKU_APP_NAME) 
+    if (`https://f5r-test.herokuapp.com`) 
         console.log('Servidor iniciado. Abra o navegador em ' + host)
     else console.log('Servidor iniciado. Abra o navegador em ' + host + portaStr)
 })
