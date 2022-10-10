@@ -98,10 +98,10 @@ const userStatus = {
     emitUserInformation();
   }
   
-  function toggleConnection() {
+  function toggleConnection(e) {
     userStatus.online = !userStatus.online;
   
-    editButtonClass(userStatus.online);
+    editButtonClass(e, userStatus.online);
     emitUserInformation();
   }
   
