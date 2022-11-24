@@ -62,7 +62,7 @@ Same thing, but split up into separate files:
     <tr><th align="left">Category</th><th align="left">Channels</th><th align="left">Playlist</th></tr>
   </thead>
   <tbody>
-    <tr><td>Auto</td><td align="right">13</td><td nowrap><code>https://tv.almgro7al3nzy.com/api-1/auto.m3u</code></td></tr>
+    <tr><td>Auto</td><td align="right">13</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/auto.m3u</code></td></tr>
     <tr><td>Animation</td><td align="right">31</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/animation.m3u</code></td></tr>
     <tr><td>Business</td><td align="right">43</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/business.m3u</code></td></tr>
     <tr><td>Classic</td><td align="right">45</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/classic.m3u</code></td></tr>
@@ -91,15 +91,12 @@ Same thing, but split up into separate files:
     <tr><td>Weather</td><td align="right">10</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/weather.m3u</code></td></tr>
     <tr><td>XXX</td><td align="right">52</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/xxx.m3u</code></td></tr>
     <tr><td>Undefined</td><td align="right">4374</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/undefined.m3u</code></td></tr>
-    <tr><td>2عباس</td><td align="right">4374</td><td nowrap><code>http://tv.almgro7al3nzy.com/api-1/all-bein.m3u</code></td></tr>
-    <tr><td>Abbas</td><td align="right">4374</td><td nowrap><code>https://raw.githubusercontent.com/info-devf5r/f5r-test/main/all-bein.m3u</code></td></tr>
-    <tr><td>عباس</td><td align="right">4374</td><td nowrap><code>http://tv.almgro7al3nzy.com/api-1/bein.m3u</code></td></tr>
   </tbody>
 </table>
 
 </details>
 
-### مجمعة حسب اللغة
+### Grouped by language
 
 <details>
 <summary>Expand</summary>
@@ -216,7 +213,7 @@ Same thing, but split up into separate files:
 
 </details>
 
-### مجمعة حسب البلد
+### Grouped by country
 
 <details>
 <summary>Expand</summary>
@@ -730,11 +727,11 @@ Same thing, but split up into separate files:
 
 </details>
 
-## دليل البرامج الإلكتروني
+## EPG
 
 The playlists already contain links to all guides, so players with support the `x-tvg-url` tag should load it automatically. Otherwise, you can choose one of the guides featured in the [iptv-org/epg](https://github.com/iptv-org/epg) repository.
 
-## قاعدة البيانات
+## Database
 
 All channel data is taken from the [iptv-org/database](https://github.com/iptv-org/database) repository. If you find any errors please open a new [issue](https://github.com/iptv-org/database/issues) there.
 
