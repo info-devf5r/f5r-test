@@ -1,0 +1,36 @@
+@media (max-width: 575.98px) { 
+
+   .Plans > .planstitle > h1{
+       font-size: 1.5em;
+       text-align: center;
+       padding: 5px;
+   }
+
+   .Plans > .planstitle > h3 {
+       text-align: center;
+       font-size: 1.2em;
+   }
+
+   .priceCards {
+       flex-direction: column;
+       margin-top: 20px;
+       width: 100%;
+   }
+
+   .priceCards > .card {
+       width: 100%;
+   }
+
+   .priceCards > .card > .body {
+       padding: 20px;
+   }
+
+   .card > .body > span {
+       font-size: 0.8em;
+   }
+
+   .card > .foot > .price {
+       margin: 10px;
+   }
+
+}

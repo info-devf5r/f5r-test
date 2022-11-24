@@ -1,0 +1,65 @@
+
+
+.Channels {
+    width: 80%;
+    margin: 0px auto 30px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.channelsList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.channelsList > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 45px;
+    margin: 10px;
+    background-color: lightblue;
+    height: 110px;
+    border: none;
+    border-radius: 5px;
+}
+
+.channelsList > div > img {
+    height: auto;
+    width: 110px;
+}
+
+.watchingTV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.watchingTV > img {
+    width: 100%;
+}
+
+.vod {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vod > .vodCard {
+    width: 25%;
+    box-sizing: border-box;
+    box-shadow: 2px 15px 20px black;
+    border: none;
+    padding: 0px;
+}
+
+.vod > .vodCard > img {
+    width: 100%;
+}

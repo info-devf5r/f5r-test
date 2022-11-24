@@ -1,0 +1,21 @@
+@media (max-width: 575.98px) { 
+    .Features > .one {
+        flex-direction: column;
+    }
+
+    .Features > .one > div > img {
+        align-self: center;
+        width: 100%;
+    }
+
+    .readmorebtn {
+        width: 100%;
+        border-radius: 50px;
+        align-self: center;
+    }
+
+    .Features > .two > h1 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+}
