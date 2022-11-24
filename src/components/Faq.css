@@ -1,0 +1,79 @@
+
+
+#ccc_FAQ {
+    padding-top: 50px;
+    padding-bottom: 28.5px;
+    width: 100%;
+    max-width: 1037px;
+    margin: 0 auto;
+   
+}
+#ccc_FAQ .ccc_title {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: .78px;
+    text-align: center;
+    color: #fff;
+    margin: 0 0 34px;
+}
+.ccc_getAccess {
+    max-width: 522px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 12px;
+    gap: 12px;
+}
+.ccc_getAccess .ccc_btn {
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 0 12px 24px 0 rgb(0 0 0 / 9%);
+    background-color: #13cd7d;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 10px;
+    text-align: left;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding: 20px 25px 21px 123px;
+    border: none;
+    cursor: pointer;
+}
+.ccc_getAccess .ccc_btn img {
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    transition-property: transform,opacity,background-color,color;
+}
+img {
+    border-style: none;
+}
+.ccc_getAccess .ccc_notice {
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+}
+
+@media screen and (max-width:1080px) {
+    #ccc_FAQ {
+        width: 90vw;
+    }
+}
+@media screen and (max-width:768px) {
+    #ccc_FAQ {
+        width: 95vw;
+    }
+}
+@media screen and (max-width:720px) {
+    #ccc_FAQ {
+        padding-top: 38.5px;
+        padding-bottom: 62px;
+    }
+    #ccc_FAQ .ccc_title {
+        margin: 0 0 32px;
+    }
+    #ccc_FAQ .ccc_getAccess {
+        display: none;
+    }
+}

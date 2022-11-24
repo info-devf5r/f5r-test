@@ -1,0 +1,99 @@
+#ccc_guarantee {
+    padding-top: 39.5px;
+    padding-bottom: 50px;
+    width: 100%;
+    max-width: 1037px;
+    margin: 0 auto;
+}
+
+#ccc_guarantee .ccc_container {
+    padding: 54px 27px 53px 53px;
+
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-gap: 45px;
+    gap: 45px;
+    grid-template-columns: 127px auto;
+    box-shadow: 0 2px 14px 0 rgb(0 0 0 / 22%);
+    background-color: #030e2e;
+    -webkit-border-radius: 7.2px;
+    transition: all 0.3s ease; 
+
+}
+
+#ccc_guarantee .ccc_container .ccc_column {
+    display: grid;
+    grid-gap: 23px;
+    gap: 23px;
+    
+}
+
+#ccc_guarantee .ccc_container .ccc_column {
+    display: grid;
+    grid-gap: 23px;
+    gap: 23px;
+}
+
+#ccc_guarantee .ccc_container .ccc_column .ccc_title {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -.9px;
+    color: #fff;
+    margin: 0;
+    text-align: left;
+}
+
+#ccc_guarantee .ccc_container .ccc_column .ccc_subtitle {
+    font-size: 17px;
+    line-height: 1.59;
+    color: #fff;
+    font-weight: 400;
+}
+#lightGurantee{
+    display: none;
+}
+@media screen and (max-width:1080px) {
+    #ccc_guarantee {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #ccc_guarantee {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    #ccc_guarantee .ccc_container {
+        padding: 36px 27px 29px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #ccc_guarantee {
+        padding-top: 29.85px;
+        padding-bottom: 38.5px;
+    }
+
+    #ccc_guarantee .ccc_container {
+        padding: 25px 18px 33px 22px;
+        grid-auto-flow: row;
+        grid-template-columns: unset;
+        justify-content: center;
+        grid-gap: 30px;
+        gap: 30px;
+    }
+    #ccc_guarantee .ccc_container .ccc_column {
+        justify-content: center;
+        grid-gap: 32px;
+        gap: 32px;
+    }
+    #ccc_guarantee .ccc_container .ccc_column .ccc_subtitle {
+        font-size: 17px;
+        line-height: 1.59;
+        text-align: left;
+    }
+}

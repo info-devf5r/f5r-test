@@ -1,0 +1,40 @@
+#ccc_channelHead {
+    padding-bottom: 31px;
+    width: 100%;
+    max-width: 1037px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 30px;
+    gap: 30px;
+    align-items: center;
+    padding: 0 0px;
+}
+
+#ccc_channelHead .ccc_title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: .75;
+    text-align: center;
+    color: #fff;
+}
+
+#ccc_channelHead .ccc_subtitle {
+    font-size: 20px;
+    line-height: 1.25;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+}
+
+#ccc_channels {
+    padding: 107px 0 57px;
+}
+.headerContainer{
+    padding-top: 65px;
+
+}
+@media screen and (max-width:720px) {
+    .headerContainer{
+        display: none;
+    }
+}

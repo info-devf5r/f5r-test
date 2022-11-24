@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato","Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+ 
+}
+
+:root {
+  /* all colors , background are set here if u want to change it can be done */
+
+  /* General Settings */
+  --bg-light-shadow: #203c91;
+  --bg-dark-shadow: #07216c;
+  --bg-light-img: url('./assets/background.png');
+  --bg-dark-img: url('./assets/darkbackground.png');
+
+  /* Dark theme  component sets  */
+  --components-dark-theme: #030e2e;
+ /* light theme component sets  */
+  --components-light-theme: #112b79;
+
+  
+  
+  /* Home Settings */
+  --green-button-bg: #13cd7d;
+  -login-button-bg: #fff;
+  --blue-text-color: #4a8aef;
+  /* css me background image use hoga discover channels me  */
+  --blue-button-color: linear-gradient(101deg, #5bb3ff, #4675ff);
+ 
+
+ /* dark theme color sets */
+  --grey-div-color: #333e5c;
+  --dark-blue-text: #11255d;
+  /* light theme color sets */
+  --blue-div-color: #4e91f3;
+  --white-text-color: #fff;
+
+  /* channel page color sets  */
+
+  /* dark theme color sets  */
+  --light-non-select-channel-tab: rgba(1, 23, 79, .08);
+  --light-select-channel-tab: var(--components-light-theme);
+  --light-channel-pannel-bg: #fff;
+  --light-channel-tab-text-non-selected: var(--components-dark-theme);
+  --light-channel-tab-text-selected: #fff;
+/* light theme color sets  */
+  --dark-non-select-channel-tab: hsla(0, 0%, 100%, .1);
+  --dark-select-channel-tab: #fff;
+  --dark-channel-pannel-bg: var(--components-dark-theme);
+  --dark-channel-tab-text-selected: var(--components-dark-theme);
+  --dark-channel-tab-text-non-selected: #fff;
+ 
+
+  /* resellers  */
+  --main-head-text: #fff;
+  --orange-bold-text: #ffbd15;
+  --price-div-bg: #ffbd15;
+  --credit-div-bg: #ffbd15;
+  --package-div-bg: #405dc8;
+  /* light theme color sets  */
+  --light-resellers-text: var(--components-dark-theme);
+  /* dark theme color sets  */
+  --dark-resellers-text: #fff;
+ 
+
+}
+.ds {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

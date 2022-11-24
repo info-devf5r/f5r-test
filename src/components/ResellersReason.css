@@ -1,0 +1,107 @@
+#ccc_reason {
+    padding-top: 53px;
+    padding-bottom: 21px;
+    width: 100%;
+    max-width: 1037px;
+    margin: 0 auto;
+}
+
+#ccc_reason .ccc_container {
+    padding: 45px 25px 50px 77px;
+   
+    display: grid;
+    grid-gap: 72px;
+    gap: 72px;
+    border-radius: 7.2px;
+    -webkit-border-radius: 7.2px;
+    box-shadow: 0 2px 14px 0 rgb(0 0 0 / 22%);
+    background-color: #030e2e;
+    transition: all 0.3s ease; 
+   
+}
+#ccc_reason .ccc_container .ccc_header {
+    display: grid;
+    grid-gap: 24px;
+    gap: 24px;
+    align-items: center;
+}
+#ccc_reason .ccc_container .ccc_header .ccc_title {
+    font-weight: 700;
+    letter-spacing: .32px;
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+}
+#ccc_reason .ccc_container .ccc_header .ccc_subtitle {
+    font-size: 17px;
+    line-height: 1.18;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+}
+#ccc_reason .ccc_container .ccc_reasons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 67px 0;
+    gap: 67px 0;
+}
+#ccc_reason .ccc_container .ccc_reasons .ccc_reason {
+    display: grid;
+    align-items: baseline;
+    grid-template-rows: 103px auto;
+}
+#ccc_reason .ccc_container .ccc_reasons .ccc_reason .ccc_info {
+    display: grid;
+    grid-gap: 5px;
+    gap: 5px;
+    max-width: 232px;
+}
+#ccc_reason .ccc_container .ccc_reasons .ccc_reason .ccc_info .ccc_title {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .28px;
+    color: white;
+    margin: 0 ;
+    text-align: left;
+}
+#ccc_reason .ccc_container .ccc_reasons .ccc_reason .ccc_info .ccc_subtitle {
+    font-size: 15px;
+    line-height: 1.33;
+    color: white;
+    font-weight: 400;
+}
+
+@media screen and (max-width:1080px) {
+    #ccc_reason {
+        width: 90vw;
+        padding-top: 13px;
+    }
+    #ccc_reason .ccc_container {
+        padding: 45px 3.25vw 50px;
+    }
+    #ccc_reason .ccc_container .ccc_reasons {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+@media screen and (max-width:768px) {
+    #ccc_reason {
+        width: 95vw;
+    }
+    #ccc_reason .ccc_container {
+        padding: 27px 3.25vw;
+    }
+    #ccc_reason .ccc_container .ccc_header .ccc_title {
+        font-size: 30px;
+        text-align: left;
+    }
+    #ccc_reason .ccc_container .ccc_header .ccc_subtitle {
+        text-align: left;
+    }
+    #ccc_reason .ccc_container .ccc_reasons {
+        grid-gap: 30px 15px;
+        gap: 30px 15px;
+        justify-content: space-between;
+    }
+}

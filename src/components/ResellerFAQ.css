@@ -1,0 +1,23 @@
+#ccc_FAQ .ccc_row {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+#ccc_FAQ .ccc_row .ccc_btn {
+    padding: 8px 26px 6px;
+    border-radius: 5px;
+    box-shadow: 0 12px 24px 0 rgb(0 0 0 / 9%);
+    background-color: #13cd7d;
+    display: grid;
+    grid-gap: 4px;
+    gap: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+#ccc_FAQ .ccc_row .ccc_btn span {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: .6;
+}

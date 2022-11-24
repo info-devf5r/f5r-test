@@ -1,0 +1,45 @@
+#ccc_intro {
+    width: 100%;
+    max-width: 1037px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 26px;
+    gap: 26px;
+    padding-bottom: 35.5px;
+}
+#ccc_intro .ccc_title {
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+    margin: 0;
+}
+#ccc_intro .ccc_subtitle {
+    font-size: 20px;
+    line-height: 1.25;
+    text-align: center;
+    color: #fff;
+}
+#ccc_apps {
+    padding: 120px 0 0;
+}
+
+@media (max-width: 768px){
+#ccc_intro {
+    width: 95vw;
+    grid-gap: 37px;
+    gap: 37px;
+}}
+
+@media (max-width: 768px){
+#ccc_intro .ccc_title {
+    font-size: 40px;
+    line-height: 1.25;
+    text-align: left;
+}}
+
+@media (max-width: 768px){
+#ccc_intro .ccc_subtitle {
+    text-align: left;
+}}

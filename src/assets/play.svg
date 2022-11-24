@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="57px" viewBox="0 0 58 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 20</title>
+    <defs>
+        <linearGradient x1="0%" y1="1.98%" x2="100%" y2="98.02%" id="linearGradient-1">
+            <stop stop-color="#9C09DB" offset="0%"></stop>
+            <stop stop-color="#1C0FD7" offset="100%"></stop>
+        </linearGradient>
+        <path d="M17.7677244,-1.62467147e-15 L32.2322756,-1.88996806e-16 C38.4105004,1.09812587e-16 40.6508741,0.643281485 42.9095407,1.85122964 C45.1682074,3.05917779 46.9408222,4.83179261 48.1487704,7.09045927 C49.3567185,9.34912594 50,11.5894996 50,17.7677244 L50,31.2322756 C50,37.4105004 49.3567185,39.6508741 48.1487704,41.9095407 C46.9408222,44.1682074 45.1682074,45.9408222 42.9095407,47.1487704 C40.6508741,48.3567185 38.4105004,49 32.2322756,49 L17.7677244,49 C11.5894996,49 9.34912594,48.3567185 7.09045927,47.1487704 C4.83179261,45.9408222 3.05917779,44.1682074 1.85122964,41.9095407 C0.643281485,39.6508741 8.04952858e-16,37.4105004 -1.38539236e-15,31.2322756 L-4.28275917e-16,17.7677244 C2.48840641e-16,11.5894996 0.643281485,9.34912594 1.85122964,7.09045927 C3.05917779,4.83179261 4.83179261,3.05917779 7.09045927,1.85122964 C9.34912594,0.643281485 11.5894996,9.43980913e-16 17.7677244,-1.62467147e-15 Z" id="path-2"></path>
+        <filter x="-14.0%" y="-10.2%" width="128.0%" height="128.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.141176471   0 0 0 0 0.031372549   0 0 0 0 0.501960784  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Light-" transform="translate(-250.000000, -1122.000000)">
+            <g id="Group-35" transform="translate(202.000000, 1094.000000)">
+                <g id="Group-20" transform="translate(52.000000, 30.000000)">
+                    <g id="Rectangle-9">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <path d="M27.4129358,16.52305 L36.1535824,31.4015735 C36.4501984,31.9064798 36.28188,32.5565563 35.7776329,32.85356 C35.6148479,32.949441 35.4294221,33 35.2405622,33 L17.759269,33 C17.1742509,33 16.7,32.5251291 16.7,31.9393463 C16.7,31.7502393 16.750493,31.5645712 16.8462488,31.4015735 L25.5868954,16.52305 C25.8835114,16.0181436 26.5327392,15.8496053 27.0369863,16.146609 C27.1922261,16.2380459 27.3216183,16.3676073 27.4129358,16.52305 Z" id="Triangle" fill="#FFFFFF" fill-rule="nonzero" transform="translate(26.500000, 24.500000) rotate(90.000000) translate(-26.500000, -24.500000) "></path>
+                    <g id="play" transform="translate(18.000000, 14.700000)"></g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

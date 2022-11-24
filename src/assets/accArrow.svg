@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="12px" viewBox="0 0 22 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>chevron-up</title>
+    <defs>
+        <path d="M18,15.6213203 L25.9393398,23.5606602 C26.5251263,24.1464466 27.4748737,24.1464466 28.0606602,23.5606602 C28.6464466,22.9748737 28.6464466,22.0251263 28.0606602,21.4393398 L19.0606602,12.4393398 C18.4748737,11.8535534 17.5251263,11.8535534 16.9393398,12.4393398 L7.93933983,21.4393398 C7.35355339,22.0251263 7.35355339,22.9748737 7.93933983,23.5606602 C8.52512627,24.1464466 9.47487373,24.1464466 10.0606602,23.5606602 L18,15.6213203 Z" id="path-1"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.303222656">
+        <g id="Home-Light-" transform="translate(-1160.000000, -4800.000000)">
+            <g id="Group-13" transform="translate(202.000000, 4770.000000)">
+                <g id="Group" transform="translate(951.000000, 18.000000)">
+                    <g id="chevron-up" transform="translate(18.000000, 18.000000) scale(1, -1) translate(-18.000000, -18.000000) ">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g id="Group" mask="url(#mask-2)" fill="#000000">
+                            <g id="COLOR/-black">
+                                <rect id="Rectangle" x="0" y="0" width="36" height="36"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

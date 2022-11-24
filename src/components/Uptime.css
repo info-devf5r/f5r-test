@@ -1,0 +1,172 @@
+#uptime_Section {
+    padding-top: 30.5px;
+    padding-bottom: 50px;
+    width: 100%;
+    max-width: 1037px;
+    margin: 0 auto;
+}
+#uptime_Section .ccc_title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    display: grid;
+    grid-gap: 13px;
+    gap: 13px;
+    grid-auto-flow: column;
+    align-items: baseline;
+    justify-content: left;
+    margin: 0 0 28px;
+    line-height: 1.2;
+}
+#uptime_Section .ccc_title span {
+    font-size: 22px;
+    font-weight: 700;
+    opacity: .5;
+    color: #fff;
+}
+#uptime_Section .ccc_container {
+    background: #fff;
+    padding: 17px 72px 22px 47px;
+    box-shadow: 0 2px 14px 0 rgb(0 0 0 / 22%);
+    background-color: #030e2e;
+    -webkit-border-radius: 7.2px;
+    transition: all 0.3s ease; 
+}
+#uptime_Section .ccc_container .ccc_rows {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 143px 132px auto 73px;
+    padding: 19px 0;
+    align-items: center;
+}
+#uptime_Section .ccc_container .ccc_rows .ccc_name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+}
+#uptime_Section .ccc_container .ccc_rows .ccc_percent {
+    font-size: 17px;
+    font-weight: 700;
+    color: #3cd672;
+    text-align: center;
+}
+#uptime_Section .ccc_container .ccc_rows .ccc_status {
+    justify-self: flex-end;
+    display: grid;
+    align-items: center;
+    grid-gap: 10px;
+    gap: 10px;
+    grid-auto-flow: column;
+}
+#ccc_badge {
+    padding: 6px;
+    background-color: rgba(60,214,114,.21);
+    width: 25px;
+    height: 25px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+#ccc_badge, #ccc_badge .ccc_circle {
+   
+    -webkit-border-radius: 100%;
+  
+}
+#ccc_badge .ccc_circle {
+    width: 13px;
+    height: 13px;
+    background-color: #3cd672;
+    animation: breath 2s ease infinite ;
+    
+}
+
+
+
+#uptime_Section .ccc_container .ccc_rows .ccc_status .ccc_type {
+    font-size: 17px;
+    color: #3cd672;
+}
+#uptime_Section .ccc_container .ccc_divider {
+    border: 0;
+    border-top: 1px solid #e7e8e9;
+}
+
+@keyframes breath {
+    0%{
+     transform: scale(0);
+    }
+     25%, 50% {
+       transform: scale(1.1);
+       opacity: 1;
+       transition: all 0.1s ease-in-out;
+     
+     }   
+     100%{
+         transform: scale(0);
+         opacity: 0;
+         transition: all 0.1s ease-in-out;
+     }
+    }
+    @media screen and (max-width:1080px) {
+        #uptime_Section{
+            width: 90vw;
+        }
+         #uptime_Section .ccc_container .ccc_rows {
+                grid-template-columns: 143px 132px auto 0;
+            }
+            #uptime_Section .ccc_container .ccc_rows .ccc_img {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            #ccc_uptime .ccc_container .ccc_rows .ccc_img img {
+    display: block;
+    margin: 0 auto;
+   
+    
+}
+
+            #uptime_Section .ccc_container .ccc_rows .ccc_status {
+                display: none;
+            }
+    }
+    @media screen and (max-width:768px) {
+        #uptime_Section{
+            width: 95vw;
+        }
+    }
+    @media screen and (max-width:720px) {
+        #uptime_Section{
+            padding-top: 32.5px;
+            padding-bottom: 32.5px;
+        }
+        #uptime_Section .ccc_title{
+            padding-left: 3.4vw;
+        }
+        #uptime_Section .ccc_container{
+            padding: 8px 13px 12px 19px;
+        }
+        #uptime_Section .ccc_container .ccc_rows {
+            grid-auto-flow: row;
+            grid-template-columns: unset;
+            grid-gap: 13px;
+            gap: 13px;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 30px 0 20px;
+        }
+        #uptime_Section .ccc_container .ccc_rows .ccc_percent {
+            order: 2;
+            text-align: left;
+        }
+        #uptime_Section .ccc_container .ccc_rows .ccc_img {
+            order: 1;
+        }
+    }
+   
+  
+
+
+
+
+

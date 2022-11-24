@@ -1,0 +1,299 @@
+#ccc_channels_list .ccc_container .ccc_column.ccc_countryList {
+    padding: 2.5px 5px 0
+}
+.MuiListItemText-primary{
+    font-weight: 700;
+    
+}
+
+.css-10hburv-MuiTypography-root {
+    margin: 0;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    display: block;
+}
+
+.MuiTypography-root{
+    font-weight: 700 ;
+}
+
+.combo{
+    background-color: var(--components-dark-theme) !important;
+}
+.Mui-selected{
+    background-color: white;
+    text-decoration: solid;
+    max-height: 40px;
+    padding-top: 1;
+    width: 100%;
+    font-weight: 900;
+}
+
+.divSelected{
+    background-color: white;
+    width: 100%;
+    border-radius: 4px;
+    color: purple;
+    /* padding-left: 1%;
+    padding-right: 1%; */
+    max-height: 40px;
+    font-weight: 900;
+    transition: all 0.3s ease
+}
+
+MuiListItemButton-root:hover{
+    background: inherit;
+}
+.divUnselected{
+    width: 100%;
+    border-radius:4px;
+    max-height: 40px;
+  
+}
+
+.divUnselectedColored{
+    width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    max-height: 40px;
+}
+
+ .ccc_searchBar {
+    padding: 11px 20px 10px 20px;
+    border-radius: 4px;
+    background-color: hsla(0,0%,100%,.17);;
+    font-size: 17px;
+    
+    overflow: hidden;
+    
+    background-position: calc(100% - 18px) 50%;
+    background-repeat: no-repeat;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    transition-property: transform,opacity,background-color,color;
+}
+
+
+
+.ccc_searchBar input {
+    width: 100%;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    transition-property: transform,opacity,background-color,color;
+    color: white;
+    
+}
+
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+}
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+}
+
+
+.ccc_column.ccc_channelList {
+    padding: 19px 19px 0 19px;
+    display: grid;
+    grid-gap: 19px;
+    gap: 8px;
+    align-items: flex-start;
+    grid-template-rows: 42px auto;
+    width: 100%;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+@media (max-width: 720px){
+.ccc_column.ccc_countryList .ccc_row select#countrieName {
+    display: grid;
+    width: 100%;
+    padding: 0 11px;
+    position: relative;
+    height: 100%;
+    z-index: 2;
+}
+}
+
+.text{
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.Mui-listItem{
+   
+}
+.MuiBox-root::-webkit-scrollbar{
+    width: 0 !important;
+}
+
+
+.iconCss{
+    
+        float: right;
+        
+        margin-top: -20px;
+        position: relative;
+        /* z-index: 2; */
+        color: rgb(247, 247, 247);
+    
+}
+
+.MuiList-root {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.MuiList-root::-webkit-scrollbar{
+    width: 0% !important;
+}
+
+.leftPanel{
+    background-color: var(--components-dark-theme);
+    min-height: 84vh;
+    max-height: 84vh;
+    overflow: auto;
+    border-radius: 9px;
+    
+}
+.comboDropdown{
+    background: rgb(63, 63, 255);
+    border-radius: 20px;
+    width: 33px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 12px;
+}
+.leftPanel::-webkit-scrollbar{
+    width: 0%;
+}
+
+.rightPanelDesktop{
+    min-width: 100% !important;
+    background-color : var(--components-dark-theme) !important;
+    border-radius: 9px !important;
+    padding: 10 !important;
+    overflow: hidden !important;
+    min-height: 84vh !important;
+    max-height: 84vh !important;
+    display: flex;
+
+}
+
+.typographyChannels{
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+.typographyCombo{
+    color: white !important;
+    font-weight: 400 !important;
+}
+
+.comboBox{
+    min-width: 100%;
+    background: var(--components-dark-theme);
+    border-radius: 4px;
+    padding: 0.7% !important;
+}
+.MuiList-root{
+    padding-top: 0 !important;
+}
+
+
+.css-a5rdam-MuiGrid-root{
+    width: calc(100% + 8px) !important;
+}
+.MuiListItem-root{
+    
+    min-height: 40px;
+    font-size: 15px;
+    font-weight: 700;
+    max-height: 40px;
+}
+.css-mi3ubi-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0px !important;
+    margin:  0px !important;
+}
+.css-1qvkgl9 {
+    /* -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1; */
+    flex-grow: 1;
+    margin: 0px !important;
+    
+}
+.css-mi3ubi-MuiGrid-root{
+    margin-top: 0 !important;
+    overflow: auto;
+   height: 69vh;
+}
+.MuiGrid-root::-webkit-scrollbar {
+    width: 0% !important;
+}
+.css-i9gxme {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    /* overflow-y: auto;
+    min-height: 20vh;
+    border: 4px solid white; */
+  
+}
+.css-1ucjffr::-webkit-scrollbar{
+    width: 0% !important;
+}
+.css-i9gxme::-webkit-scrollbar {
+    width: 0% !important;
+}
+
+@media screen and (max-width:920px) {
+    .css-a5rdam-MuiGrid-root>.MuiGrid-item {
+        padding-right: 0px !important;
+        min-width: 100% !important;
+    }
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+    max-height: 50vh !important;
+}
+
+.MuiSelect-select{
+    color: white !important;
+}
+
+@media screen and (max-width:500px){
+
+
+    .css-1mk9mw3-MuiList-root {
+        overflow: auto;
+        height: 76vh;
+
+    }
+}
+@media screen  and(height:960px) {
+
+    .css-mi3ubi-MuiGrid-root{
+       
+       height: 74vh;
+    }
+   
+}
+
+
+.inputText{
+    color: white;
+    width: 100%
+}

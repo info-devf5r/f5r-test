@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="26" viewBox="0 0 24 26">
+    <defs>
+        <path id="uatmtecuna" d="M12 14.718L6.707 8.984c-.39-.423-1.024-.423-1.414 0-.39.423-.39 1.109 0 1.532l6 6.5c.39.423 1.024.423 1.414 0l6-6.5c.39-.423.39-1.109 0-1.532-.39-.423-1.024-.423-1.414 0L12 14.718z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-819.000000, -1793.000000) translate(819.000000, 1793.000000)">
+                <mask id="9c85s4ywxb" fill="#fff">
+                    <use xlink:href="#uatmtecuna"/>
+                </mask>
+                <use fill="#fff" fill-rule="nonzero" xlink:href="#uatmtecuna"/>
+                <g fill="#fff" mask="url(#9c85s4ywxb)">
+                    <path d="M0 0H24V26H0z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,43 +1,72 @@
-## IPTV Playlist
+# Getting Started with Create React App
 
-ง่าย ๆ เพียงนำ IPTV Playlist URL ของเรา ด้านล่างนี้ ไปใส่ในโปรแกรมที่รองรับ ก็จะสามารถดูได้ทันที โดย Playlist เหล่านี้ สามารถแก้ไขช่องที่เสียด้วยตัวเองโดยอัตโนมัติทุก ๆ 2 ชม. และมีคุณภาพความคมชัดระดับ HD เกือบทุกช่อง
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-### Version 1 (Classic M3U)
+In the project directory, you can run:
 
-# https://iptv36.netlify.app/playlist-v1.m3u
+### `yarn start`
 
-- หมายเลขช่องตรงตามระบบทีวีดิจิตอลไทย เหมาะกับการใช้คู่กับรีโมทที่มีปุ่มกดตัวเลข 0-9
-- คงไว้เพียง 36 ช่องเท่านั้น ไม่รกเกินไป มั่นใจดูได้ทุกช่อง
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
----
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Version 2 (New M3U)
+### `yarn test`
 
-# https://iptv36.netlify.app/playlist-v2.m3u
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- เรียงลำดับก่อนหลังตามระบบทีวีดิจิตอลไทย พร้อมช่องสำรองอยู่ใกล้เคียงกัน เพื่อความสะดวกในการเปลี่ยนไปใช้ช่องสำรอง
-- เหมาะกับการใช้คู่กับรีโมทที่มีเพียงปุ่มขึ้นลงซ้ายขวา และหน้าจอทัชสกรีนบน Smart Phone
+### `yarn build`
 
----
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## XMLTV EPG
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-นอกจากนี้ เรายังมี Electronic programming guides (EPG) ในรูปแบบ XMLTV ให้คุณนำไปใช้ด้วย
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-# https://iptv36.netlify.app/epg.xml
+### `yarn eject`
 
----
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Recommended App
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- [Televizo](https://play.google.com/store/apps/details?id=com.ottplay.ottplay) (Android/ATV)
-- [Dimplay](https://play.google.com/store/apps/details?id=com.iptv3u) (Android)
-- [Media Player Classic](https://www.majorgeeks.com/files/details/k_lite_codec_pack_full.html) (Windows)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## NOT Recommended App
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- [Tivimate Free Version](https://play.google.com/store/apps/details?id=ar.tvplayer.tv) (ATV) => No refresh
-- [Wiseplay](https://play.google.com/store/apps/details?id=com.wiseplay) (Android/ATV) => Not support EPG
-- [IPTV Core Luncher](https://play.google.com/store/apps/details?id=ru.iptvremote.android.iptv.core.launcher) (Android/ATV) => Not support http-referrer / Cannot play some channel
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# NabeelUpdatedLandingSite
+# NabeelLandingSiteUpdated
