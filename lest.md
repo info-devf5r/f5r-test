@@ -27,6 +27,7 @@ Same thing, but split up into separate files:
     <tr><td>طبخ</td><td align="right">19</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/cooking.m3u</code></td></tr>
     <tr><td>ثقافة</td><td align="right">21</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/culture.m3u</code></td></tr>
     <tr><td>وثائقي</td><td align="right">41</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/documentary.m3u</code></td></tr>
+    <tr><td>2وثائقي</td><td align="right">44</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/documentary.m3u</code></td></tr>
     <tr><td>تعليم</td><td align="right">94</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/education.m3u</code></td></tr>
   </tbody>
 </table>
