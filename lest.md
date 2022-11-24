@@ -87,15 +87,15 @@ Same thing, but split up into separate files:
     <tr><th align="left">Country</th><th align="left">Channels</th><th align="left">Playlist</th></tr>
   </thead>
   <tbody>
-    <tr><td>🇦🇫 Afghanistan</td><td align="right">65</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/af.m3u</code></td></tr>
-    <tr><td>🇦🇱 Albania</td><td align="right">88</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/al.m3u</code></td></tr>
-    <tr><td>🇩🇿 Algeria</td><td align="right">94</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/dz.m3u</code></td></tr>
-    <tr><td>🇦🇸 American Samoa</td><td align="right">52</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/as.m3u</code></td></tr>
-    <tr><td>🇦🇩 Andorra</td><td align="right">70</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ad.m3u</code></td></tr>
-    <tr><td>🇦🇴 Angola</td><td align="right">53</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ao.m3u</code></td></tr>
-    <tr><td>🇦🇮 Anguilla</td><td align="right">51</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ai.m3u</code></td></tr>
-    <tr><td>🇦🇶 Antarctica</td><td align="right">47</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/aq.m3u</code></td></tr>
-    <tr><td>🇦🇬 Antigua and Barbuda</td><td align="right">52</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ag.m3u</code></td></tr>
+    <tr><td>🇦🇫 أفغانستان</td><td align="right">65</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/af.m3u</code></td></tr>
+    <tr><td>🇦🇱 ألبانيا</td><td align="right">88</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/al.m3u</code></td></tr>
+    <tr><td>🇩🇿 الجزائر</td><td align="right">94</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/dz.m3u</code></td></tr>
+    <tr><td>🇦🇸 ساموا الأمريكية</td><td align="right">52</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/as.m3u</code></td></tr>
+    <tr><td>🇦🇩 أندورا</td><td align="right">70</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ad.m3u</code></td></tr>
+    <tr><td>🇦🇴 أنغولا</td><td align="right">53</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ao.m3u</code></td></tr>
+    <tr><td>🇦🇮 أنغيلا</td><td align="right">51</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ai.m3u</code></td></tr>
+    <tr><td>🇦🇶 القارة القطبية الجنوبية</td><td align="right">47</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/aq.m3u</code></td></tr>
+    <tr><td>🇦🇬 أنتيغوا وبربودا</td><td align="right">52</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/ag.m3u</code></td></tr>
    </tbody>
 </table>
 
