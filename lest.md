@@ -22,13 +22,6 @@ Same thing, but split up into separate files:
     <tr><td>آلي</td><td align="right">13</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/auto.m3u</code></td></tr>
     <tr><td>الرسوم المتحركة</td><td align="right">31</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/animation.m3u</code></td></tr>
     <tr><td>اعمال</td><td align="right">43</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/business.m3u</code></td></tr>
-    <tr><td>كلاسيك</td><td align="right">45</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/classic.m3u</code></td></tr>
-    <tr><td>كوميديا</td><td align="right">41</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/comedy.m3u</code></td></tr>
-    <tr><td>طبخ</td><td align="right">19</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/cooking.m3u</code></td></tr>
-    <tr><td>ثقافة</td><td align="right">21</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/culture.m3u</code></td></tr>
-    <tr><td>وثائقي</td><td align="right">41</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/documentary.m3u</code></td></tr>
-    <tr><td>2وثائقي</td><td align="right">44</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/documentary.m3u</code></td></tr>
-    <tr><td>تعليم</td><td align="right">94</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/education.m3u</code></td></tr>
   </tbody>
 </table>
 
