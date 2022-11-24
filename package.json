@@ -1,39 +1,19 @@
 {
-  "name": "iptv-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-owl-carousel": "^2.3.3",
-    "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "iptv36.my.to",
+  "version": "1.0.0",
+  "description": "Thai IPTV Playlist & XMLTV EPG",
+  "repository": "https://github.com/krittawitst/iptv36.my.to.git",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "node builder"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "axios": "^0.21.2",
+    "form-data": "^3.0.0",
+    "jsdom": "^16.4.0"
   }
 }

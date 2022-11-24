@@ -1,0 +1,17 @@
+name: Trigger Netlify Build at 0,4,8,12,16,20 GTM+7
+on:
+  schedule:
+    # Every 2 hours on UTC
+    - cron: '59 */2 * * *'
+jobs:
+  build:
+    name: Netlify build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Asia/Bangkok
+      - name: Curl request
+        run: curl -X POST -d {} https://api.netlify.com/build_hooks/5f82a598d1e6201d4ec0cb7a
+      - name: Show current date
+        run: date
