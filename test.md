@@ -92,13 +92,14 @@ Same thing, but split up into separate files:
     <tr><td>XXX</td><td align="right">52</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/xxx.m3u</code></td></tr>
     <tr><td>Undefined</td><td align="right">4374</td><td nowrap><code>https://iptv-org.github.io/iptv/categories/undefined.m3u</code></td></tr>
     <tr><td>2عباس</td><td align="right">4374</td><td nowrap><code>http://tv.almgro7al3nzy.com/api-1/all-bein.m3u</code></td></tr>
+    <tr><td>Abbas</td><td align="right">4374</td><td nowrap><code>https://raw.githubusercontent.com/info-devf5r/f5r-test/main/all-bein.m3u</code></td></tr>
     <tr><td>عباس</td><td align="right">4374</td><td nowrap><code>http://tv.almgro7al3nzy.com/api-1/bein.m3u</code></td></tr>
   </tbody>
 </table>
 
 </details>
 
-### Grouped by language
+### مجمعة حسب اللغة
 
 <details>
 <summary>Expand</summary>
@@ -215,7 +216,7 @@ Same thing, but split up into separate files:
 
 </details>
 
-### Grouped by country
+### مجمعة حسب البلد
 
 <details>
 <summary>Expand</summary>
@@ -729,11 +730,11 @@ Same thing, but split up into separate files:
 
 </details>
 
-## EPG
+## دليل البرامج الإلكتروني
 
 The playlists already contain links to all guides, so players with support the `x-tvg-url` tag should load it automatically. Otherwise, you can choose one of the guides featured in the [iptv-org/epg](https://github.com/iptv-org/epg) repository.
 
-## Database
+## قاعدة البيانات
 
 All channel data is taken from the [iptv-org/database](https://github.com/iptv-org/database) repository. If you find any errors please open a new [issue](https://github.com/iptv-org/database/issues) there.
 
