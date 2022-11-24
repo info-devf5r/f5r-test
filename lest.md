@@ -1,19 +1,6 @@
-
-### Grouped by category
-
 <details>
 <summary>Expand</summary>
 <br>
-
-Playlist in which each channel has its _category_ as a group title:
-
-```
-https://iptv-org.github.io/iptv/index.category.m3u
-```
-
-Same thing, but split up into separate files:
-
-<!-- prettier-ignore -->
 <table>
   <thead>
     <tr><th align="left">فئة</th><th align="left">Channels</th><th align="left">Playlist</th></tr>
@@ -26,5 +13,3 @@ Same thing, but split up into separate files:
 </table>
 
 </details>
-
-[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](LICENSE)
