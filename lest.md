@@ -121,15 +121,15 @@ Same thing, but split up into separate files:
     <tr><th align="left">Region</th><th align="left">Channels</th><th align="left">Playlist</th></tr>
   </thead>
   <tbody>
-    <tr><td align="left">Africa</td><td align="right">133</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/afr.m3u</code></td></tr>
-    <tr><td align="left">Americas</td><td align="right">2910</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/amer.m3u</code></td></tr>
-    <tr><td align="left">Asia-Pacific</td><td align="right">1562</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/apac.m3u</code></td></tr>
-    <tr><td align="left">Arab world</td><td align="right">309</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/arab.m3u</code></td></tr>
-    <tr><td align="left">Association of Southeast Asian Nations</td><td align="right">297</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/asean.m3u</code></td></tr>
-    <tr><td align="left">Asia</td><td align="right">2274</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/asia.m3u</code></td></tr>
-    <tr><td align="left">Benelux</td><td align="right">154</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/benelux.m3u</code></td></tr>
-    <tr><td align="left">Caribbean</td><td align="right">106</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/carib.m3u</code></td></tr>
-    <tr><td align="left">Central Asia</td><td align="right">29</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/cas.m3u</code></td></tr>
+    <tr><td align="left">أفريقيا</td><td align="right">133</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/afr.m3u</code></td></tr>
+    <tr><td align="left">الأمريكتان</td><td align="right">2910</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/amer.m3u</code></td></tr>
+    <tr><td align="left">آسيا والمحيط الهادئ</td><td align="right">1562</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/apac.m3u</code></td></tr>
+    <tr><td align="left">العالم العربي</td><td align="right">309</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/arab.m3u</code></td></tr>
+    <tr><td align="left">رابطة أمم جنوب شرق آسيا</td><td align="right">297</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/asean.m3u</code></td></tr>
+    <tr><td align="left">آسيا</td><td align="right">2274</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/asia.m3u</code></td></tr>
+    <tr><td align="left">البنلوكس</td><td align="right">154</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/benelux.m3u</code></td></tr>
+    <tr><td align="left">منطقة البحر الكاريبي</td><td align="right">106</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/carib.m3u</code></td></tr>
+    <tr><td align="left">آسيا الوسطى</td><td align="right">29</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/cas.m3u</code></td></tr>
   </tbody>
 </table>
 
