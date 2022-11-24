@@ -16,18 +16,18 @@ Same thing, but split up into separate files:
 <!-- prettier-ignore -->
 <table>
   <thead>
-    <tr><th align="left">Category</th><th align="left">Channels</th><th align="left">Playlist</th></tr>
+    <tr><th align="left">فئة</th><th align="left">Channels</th><th align="left">Playlist</th></tr>
   </thead>
   <tbody>
-    <tr><td>Auto</td><td align="right">13</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/auto.m3u</code></td></tr>
-    <tr><td>Animation</td><td align="right">31</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/animation.m3u</code></td></tr>
-    <tr><td>Business</td><td align="right">43</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/business.m3u</code></td></tr>
-    <tr><td>Classic</td><td align="right">45</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/classic.m3u</code></td></tr>
-    <tr><td>Comedy</td><td align="right">41</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/comedy.m3u</code></td></tr>
-    <tr><td>Cooking</td><td align="right">19</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/cooking.m3u</code></td></tr>
-    <tr><td>Culture</td><td align="right">21</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/culture.m3u</code></td></tr>
-    <tr><td>Documentary</td><td align="right">41</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/documentary.m3u</code></td></tr>
-    <tr><td>Education</td><td align="right">94</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/education.m3u</code></td></tr>
+    <tr><td>آلي</td><td align="right">13</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/auto.m3u</code></td></tr>
+    <tr><td>الرسوم المتحركة</td><td align="right">31</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/animation.m3u</code></td></tr>
+    <tr><td>اعمال</td><td align="right">43</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/business.m3u</code></td></tr>
+    <tr><td>كلاسيك</td><td align="right">45</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/classic.m3u</code></td></tr>
+    <tr><td>كوميديا</td><td align="right">41</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/comedy.m3u</code></td></tr>
+    <tr><td>طبخ</td><td align="right">19</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/cooking.m3u</code></td></tr>
+    <tr><td>ثقافة</td><td align="right">21</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/culture.m3u</code></td></tr>
+    <tr><td>وثائقي</td><td align="right">41</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/documentary.m3u</code></td></tr>
+    <tr><td>تعليم</td><td align="right">94</td><td nowrap><code>https://info-devf5r.github.io/iptv/categories/education.m3u</code></td></tr>
   </tbody>
 </table>
 
@@ -53,15 +53,15 @@ Same thing, but split up into separate files:
     <tr><th align="left">Language</th><th align="left">Channels</th><th align="left">Playlist</th></tr>
   </thead>
   <tbody>
-    <tr><td align="left">Albanian</td><td align="right">21</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/sqi.m3u</code></td></tr>
-    <tr><td align="left">Amharic</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/amh.m3u</code></td></tr>
-    <tr><td align="left">Arabic</td><td align="right">327</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/ara.m3u</code></td></tr>
-    <tr><td align="left">Armenian</td><td align="right">26</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/hye.m3u</code></td></tr>
-    <tr><td align="left">Assamese</td><td align="right">2</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/asm.m3u</code></td></tr>
-    <tr><td align="left">Assyrian Neo-Aramaic</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/aii.m3u</code></td></tr>
-    <tr><td align="left">Azerbaijani</td><td align="right">12</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/aze.m3u</code></td></tr>
-    <tr><td align="left">Bashkir</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/bak.m3u</code></td></tr>
-    <tr><td align="left">Basque</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/eus.m3u</code></td></tr>
+    <tr><td align="left">الألبانية</td><td align="right">21</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/sqi.m3u</code></td></tr>
+    <tr><td align="left">الأمهرية</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/amh.m3u</code></td></tr>
+    <tr><td align="left">عربي</td><td align="right">327</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/ara.m3u</code></td></tr>
+    <tr><td align="left">أرميني</td><td align="right">26</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/hye.m3u</code></td></tr>
+    <tr><td align="left">الأسامية</td><td align="right">2</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/asm.m3u</code></td></tr>
+    <tr><td align="left">الآرامية الآشورية الجديدة</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/aii.m3u</code></td></tr>
+    <tr><td align="left">الأذربيجانية</td><td align="right">12</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/aze.m3u</code></td></tr>
+    <tr><td align="left">بشكير</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/bak.m3u</code></td></tr>
+    <tr><td align="left">الباسك</td><td align="right">1</td><td align="left" nowrap><code>https://info-devf5r.github.io/iptv/categories/eus.m3u</code></td></tr>
    </tbody>
 </table>
 
