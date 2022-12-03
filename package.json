@@ -1,14 +1,17 @@
 {
-  "name": "iptv-checker-module",
-  "version": "2.0.5",
-  "description": "Check the status of IPTV channels in an .m3u playlist file",
+  "name": "iptv-checker",
+  "version": "0.25.0",
+  "description": "Node.js CLI tool for checking links in IPTV playlists",
   "main": "src/index.js",
-  "files": [
-    "src"
-  ],
+  "preferGlobal": true,
+  "homepage": "https://github.com/freearhey/iptv-checker",
+  "bin": {
+    "iptv-checker": "bin/iptv-checker.js"
+  },
   "scripts": {
+    "start": "node src/index.js",
     "lint": "npx eslint ./src/**/*.js ./test/*.js",
-    "test": "npx ava",
+    "test": "npx jest",
     "prePush": "npm-run-all -p lint test"
   },
   "publishConfig": {
@@ -16,51 +19,50 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/detroitenglish/iptv-checker-module.git"
+    "url": "https://github.com/freearhey/iptv-checker.git"
   },
-  "author": "Dave Willenberg <dave@detroit-english.de>",
+  "author": "Arhey",
   "license": "MIT",
-  "homepage": "https://github.com/detroitenglish/iptv-checker-module/blob/master/README.md",
   "keywords": [
     "iptv",
     "m3u",
     "m3u8",
-    "checker",
-    "playlists"
+    "checker"
   ],
   "dependencies": {
     "axios": "^0.21.1",
+    "axios-curlirize": "^1.3.7",
     "colors": "^1.4.0",
     "command-exists": "^1.2.9",
-    "iptv-playlist-parser": "^0.5.4",
-    "nanoid": "^3.1.10",
+    "commander": "^2.20.0",
+    "dateformat": "^3.0.3",
+    "get-stdin": "^7.0.0",
+    "iptv-playlist-parser": "^0.12.0",
+    "jest": "^27.0.6",
+    "lodash.chunk": "^4.2.0",
+    "progress": "^2.0.3",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "ava": "^3.9.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
+    "del": "^5.1.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.5",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.5"
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mkdirp": "^1.0.4",
+    "prettier": "^2.0.4"
   },
   "engines": {
     "node": ">=10.0.0"
   },
   "ava": {
     "failFast": true,
-    "concurrency": 2,
-    "timeout": "1m",
+    "concurrency": 3,
+    "timeout": "10m",
     "files": [
       "test/*.test.js"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run prePush"
-    }
   }
 }

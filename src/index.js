@@ -1,111 +1,119 @@
 require('colors')
-const helper = require('./helper')
-const { isWebUri } = require('valid-url')
+const chunk = require('lodash.chunk')
+const { isUri } = require('valid-url')
 const commandExists = require('command-exists')
-
-const procs = require('os').cpus().length - 1
-
-let stats = {
-  total: 0,
-  online: 0,
-  offline: 0,
-  duplicates: 0,
-}
+const { parsePlaylist } = require('./parser')
+const cache = require('./cache')
+const Logger = require('./Logger')
+const cpus = require('os').cpus()
+const { loadStream } = require('./http')
+const ffprobe = require('./ffprobe')
 
 const defaultConfig = {
   debug: false,
   userAgent: null,
-  timeout: 1e4,
-  parallel: procs || 1,
-  omitMetadata: false,
-  useItemHttpHeaders: true,
-  preCheckAction: parsedPlaylist => {}, // eslint-disable-line
-  itemCallback: item => {}, // eslint-disable-line
+  timeout: 60000,
+  parallel: cpus.length,
+  setUp: playlist => {}, // eslint-disable-line
+  afterEach: item => {}, // eslint-disable-line
+  beforeEach: item => {}, // eslint-disable-line
 }
 
-module.exports = async function (input, opts = {}) {
-  await commandExists(`ffprobe`).catch(() => {
-    throw new Error(
-      `Executable "ffprobe" not found. Have you installed "ffmpeg"?`
-    )
-  })
+class IPTVChecker {
+  constructor(opts = {}) {
+    this.config = { ...defaultConfig, ...opts }
+    this.logger = new Logger(this.config)
+  }
 
-  const results = []
-
-  const duplicates = []
-
-  const config = { ...defaultConfig, ...opts }
-
-  const playlist = await helper.parsePlaylist(input)
-
-  const debugLogger = helper.debugLogger(config)
-
-  debugLogger(config)
-
-  const items = playlist.items
-    .map(item => {
-      if (!isWebUri(item.url)) return null
-
-      if (helper.checkCache(item)) {
-        duplicates.push(item)
-
-        return null
-      } else {
-        helper.addToCache(item)
-
-        return item
-      }
+  async checkPlaylist(input) {
+    await commandExists(`ffprobe`).catch(() => {
+      throw new Error(
+        `Executable "ffprobe" not found. Have you installed "ffmpeg"?`
+      )
     })
-    .filter(Boolean)
 
-  await config.preCheckAction.call(null, {
-    ...playlist,
-    items: [...items, ...duplicates],
-  })
+    if (
+      !(input instanceof Object) &&
+      !Buffer.isBuffer(input) &&
+      typeof input !== `string`
+    ) {
+      throw new Error('Unsupported input type')
+    }
 
-  stats.total = items.length + duplicates.length
+    const results = []
+    const duplicates = []
+    const config = this.config
+    const logger = this.logger
 
-  stats.duplicates = duplicates.length
+    logger.debug({ config })
 
-  debugLogger(`Checking ${stats.total} playlist items...`)
+    const playlist = await parsePlaylist(input).catch(err => {
+      throw new Error(err)
+    })
 
-  if (duplicates.length)
-    debugLogger(`Found ${stats.duplicates} duplicates...`.yellow)
+    await config.setUp(playlist)
 
-  for (let item of duplicates) {
-    item.status = { ok: false, reason: `Duplicate` }
-    await config.itemCallback(item)
-    results.push(item)
+    const items = playlist.items
+      .map(item => {
+        if (!isUri(item.url)) return null
+
+        if (cache.check(item)) {
+          duplicates.push(item)
+
+          return null
+        } else {
+          cache.add(item)
+
+          return item
+        }
+      })
+      .filter(Boolean)
+
+    for (let item of duplicates) {
+      item.status = { ok: false, code: 'DUPLICATE', message: `Duplicate` }
+      await config.afterEach(item)
+      results.push(item)
+    }
+
+    if (+config.parallel === 1) {
+      for (let item of items) {
+        const checkedItem = await this.checkStream(item)
+
+        results.push(checkedItem)
+      }
+    } else {
+      const chunkedItems = chunk(items, +config.parallel)
+
+      for (let [...chunk] of chunkedItems) {
+        const chunkResults = await Promise.all(
+          chunk.map(item => this.checkStream(item))
+        )
+        results.push(...chunkResults)
+      }
+    }
+
+    return playlist
   }
 
-  const ctx = { config, stats, debugLogger }
+  async checkStream(item) {
+    const { config, logger } = this
 
-  const validator = helper.validateStatus.bind(ctx)
+    await config.beforeEach(item)
 
-  if (+config.parallel === 1) {
-    for (let item of items) {
-      const checkedItem = await validator(item)
+    item.status = await loadStream(item, config, logger)
+      .then(() => ffprobe(item, config, logger))
+      .catch(status => status)
 
-      results.push(checkedItem)
+    if (item.status.ok) {
+      logger.debug(`OK: ${item.url}`.green)
+    } else {
+      logger.debug(`FAILED: ${item.url} (${item.status.message})`.red)
     }
-  } else {
-    const chunkedItems = helper.chunk(items, +config.parallel)
 
-    for (let [...chunk] of chunkedItems) {
-      const chunkResults = await Promise.all(chunk.map(validator))
-      results.push(...chunkResults)
-    }
+    await config.afterEach(item)
+
+    return item
   }
-
-  playlist.items = helper.orderBy(results, [`name`])
-
-  if (config.omitMetadata) {
-    for (let item of playlist.items) {
-      delete item.status.metadata
-    }
-  }
-
-  helper.statsLogger(ctx)
-
-  return playlist
 }
+
+module.exports = IPTVChecker

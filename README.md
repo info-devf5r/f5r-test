@@ -1,171 +1,239 @@
-# IPTV Checker Module
+# IPTV Checker [![Build Status](https://app.travis-ci.com/freearhey/iptv-checker.svg?branch=master)](https://app.travis-ci.com/freearhey/iptv-checker)
 
-A module for validating IPTV channel links in `.m3u` playlists.
+Node.js CLI tool for checking links in IPTV playlists.
 
-## Requirements
-
-**This tool requires the `ffmpeg` library, so you need to have it installed on your device.**
-
-You can find the right [installer for your system here](https://www.ffmpeg.org/download.html).
-
-## Example
-
-```javascript
-const { readFileSync } = require('fs')
-const iptvChecker = require('iptv-checker-module')
-
-const opts = {
-  timeout: 5000,
-  parallel: 2,
-}
-
-// Example with path to local playlist file
-iptvChecker('/home/foo/playlist.m3u', opts)
-
-// Example with playlist URL
-iptvChecker('http://127.0.0.1/example/playlist.m3u', opts)
-
-// Example with playlist data Buffer
-const playlistBuffer = readFileSync('/home/foo/playlist.m3u')
-iptvChecker(playlistBuffer, opts)
-```
+This tool is based on the `ffmpeg` library, so you need to install it on your computer first. You can find the right installer for your system here: https://www.ffmpeg.org/download.html
 
 ## Usage
 
-```javascript
-iptvChecker(input, [(options = {})])
+### CLI
+
+```sh
+npm install -g iptv-checker
 ```
 
-This module exports a single **asyncronous** function for parsing one of the following inputs:
+#### Check local playlist file:
 
-1. Path to a local `.m3u` playlist file (_String_)
-2. URL of an `.m3u` playlist (_String_)
-3. `.m3u` file data (_String_ or _Buffer_)
+```sh
+iptv-checker /path-to-playlist/example.m3u
+```
 
-...using the [iptv-playlist-parser](https://www.npmjs.com/package/iptv-playlist-parser) package.
+#### Check playlist URL:
 
-It will attempt to connect to each item's (i.e. channel's) URL, and adds a `status` object to the item with the results of said attempt.
+```sh
+iptv-checker https://some-playlist.lol/list.m3u
+```
 
-### Options (Object)
+#### Pipe playlist from `stdin`:
 
-- `timeout`: Time (in ms) to wait for connection to an IPTV channel stream before considering the channel offline (default: `10000` )
-- `parallel`: Number of channels to check concurrently (default: _`Available CPUs - 1`_)
-- `userAgent`: User-Agent string to use when connecting to IPTV channel URLs (default: `undefined`)
-- `debug`: Print additional progress and result information to the console (default: `false`)
-- `omitMetadata`: Omit the `metadata` field from the `status` object of successful connections (default: `false`)
-- `useItemHttpHeaders`: If defined, use a channel's custom `Referer` and/or `User-Agent` headers. Note that channel-specific user-agents will override the `userAgent` option (default: `true`)
-- `preCheckAction`: Function to run after parsing the playlist and before checking channels, with the list's `iptv-playlist-parser` object as parameter (default: `(parsedPlaylist) => {}` )
-- `itemCallback`: Function to run after checking a channel, with the channel's `item` object as parameter (default: `(item) => {}` )
+```sh
+cat ~/some-playlist.m3u | iptv-checker
+```
 
-```javascript
-const iptvChecker = require('iptv-checker-module')
+Arguments:
 
-const options = {
-  timeout: 5e3,
-  parallel: 2,
-  userAgent: 'Mozilla/5.0 (compatible; Silly-Fetcher like kek) ROFLcopters',
-  debug: true,
-  omitMetadata: true,
-  useItemHttpHeaders: true,
-  preCheckAction: playlist => {
-    console.log('Total channels to check:', playlist.items.length)
-  },
-  itemCallback: item => {
-    console.log(item.url, item.status.ok)
-  },
-}
+- `-o, --output`: change default output directory
+- `-t, --timeout`: specifies the number of milliseconds before the request will be aborted (default to 60000)
+- `-a, --user-agent`: set custom HTTP User-Agent
+- `-k, --insecure`: allow insecure connections when using SSL
+- `-p, --parallel`: Batch size of channels to check concurrently (default to 1)
 
-iptvChecker('./local/playlist.m3u', options).then(checkedPlaylist => {
-  /*  results Object */
+### Module
+
+```sh
+npm install iptv-checker
+```
+
+```js
+var checker = require('iptv-checker')
+
+// using playlist url
+checker.checkPlaylist('https://some-playlist.lol/list.m3u').then(results => {
+  console.log(results)
+})
+
+// using local path
+checker.checkPlaylist('path/to/playlist.m3u').then(results => {
+  console.log(results)
+})
+
+// using playlist as string
+checker.checkPlaylist(string).then(results => {
+  console.log(results)
 })
 ```
 
-### Output
+#### Results
 
-The function returns the [iptv-playlist-parser](https://www.npmjs.com/package/iptv-playlist-parser) object, with each `item` having an additional `status` object with its connection attempt result.
+_On success:_
 
-All `status` objects include an `ok: <Boolean>` property indicating if connection was successful or not.
-
-#### Item Success
-
-Unless omitted in options, items' `status` with successful connection attempts will include a `metadata` object containing `streams` and `format` data returned by `ffprobe`
-
-```javascript
+```js
 {
   header: {
-    attrs: {
-      'x-tvg-url': 'http://example.com/epg.xml.gz'
-    },
-    raw: '#EXTM3U x-tvg-url="http://example.com/epg.xml.gz"'
+    attrs: {},
+    raw: '#EXTM3U x-tvg-url=""'
   },
   items: [
     {
-      name: 'CGTN Documentary',
+      name: 'KBSV/AssyriaSat (720p) [Not 24/7]',
       tvg: {
-        id: '',
+        id: 'KBSVAssyriaSat.us',
         name: '',
-        language: 'Chinese',
-        country: 'CN',
-        logo: 'https://i.imgur.com/TSG6WBy.png',
+        logo: 'https://i.imgur.com/zEWSSdf.jpg',
         url: '',
+        rec: ''
       },
-      group: { title: 'Documentary' },
-      url: 'https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8',
-      raw:
-        '#EXTINF:-1 tvg-id="" tvg-name="" tvg-language="Chinese" tvg-logo="https://i.imgur.com/TSG6WBy.png" tvg-country="CN" tvg-url="" group-title="Documentary",CGTN Documentary\n' +
-        'https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8',
+      group: {
+        title: 'General'
+      },
+      http: {
+        referrer: '',
+        'user-agent': ''
+      },
+      url: 'http://66.242.170.53/hls/live/temp/index.m3u8',
+      raw: '#EXTINF:-1 tvg-id="KBSVAssyriaSat.us" tvg-logo="https://i.imgur.com/zEWSSdf.jpg" group-title="General",KBSV/AssyriaSat (720p) [Not 24/7]\r\nhttp://66.242.170.53/hls/live/temp/index.m3u8',
+      line: 2,
+      catchup: {
+        type: '',
+        days: '',
+        source: ''
+      },
+      timeshift: '',
       status: {
         ok: true,
         metadata: {
-          streams: [Array],
-          format: [Object],
+          streams: [
+            {
+              index: 0,
+              codec_name: 'h264',
+              codec_long_name: 'H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10',
+              profile: 'High',
+              codec_type: 'video',
+              codec_tag_string: '[27][0][0][0]',
+              codec_tag: '0x001b',
+              width: 1280,
+              height: 720,
+              coded_width: 1280,
+              coded_height: 720,
+              closed_captions: 0,
+              has_b_frames: 2,
+              pix_fmt: 'yuv420p',
+              level: 31,
+              chroma_location: 'left',
+              refs: 1,
+              is_avc: 'false',
+              nal_length_size: '0',
+              r_frame_rate: '30/1',
+              avg_frame_rate: '0/0',
+              time_base: '1/90000',
+              start_pts: 943358850,
+              start_time: '10481.765000',
+              bits_per_raw_sample: '8',
+              disposition: {
+                default: 0,
+                dub: 0,
+                original: 0,
+                comment: 0,
+                lyrics: 0,
+                karaoke: 0,
+                forced: 0,
+                hearing_impaired: 0,
+                visual_impaired: 0,
+                clean_effects: 0,
+                attached_pic: 0,
+                timed_thumbnails: 0
+              },
+              tags: {
+                variant_bitrate: '400000'
+              }
+            },
+            //...
+          ],
+          format: {
+            filename: 'http://66.242.170.53/hls/live/temp/index.m3u8',
+            nb_streams: 2,
+            nb_programs: 1,
+            format_name: 'hls',
+            format_long_name: 'Apple HTTP Live Streaming',
+            start_time: '10481.560589',
+            size: '214',
+            probe_score: 100
+          },
+          requests: [
+            {
+              method: 'GET',
+              url: 'http://66.242.170.53/hls/live/temp/index.m3u8',
+              headers: {
+                'User-Agent': 'Lavf/58.76.100',
+                Accept: '*/*',
+                Range: 'bytes=0-',
+                Connection: 'close',
+                Host: '66.242.170.53',
+                'Icy-MetaData': '1'
+              }
+            },
+            //...
+          ]
         }
       }
-    }
+    },
+    //...
   ]
 }
 ```
 
-#### Item Failure
+_On error:_
 
-Items' `status` with a failed connection attempt will include a `reason` property string detailing the cause of failure.
-
-```javascript
+```js
 {
   header: {
-    attrs: {
-      'x-tvg-url': 'http://example.com/epg.xml.gz'
-    },
-    raw: '#EXTM3U x-tvg-url="http://example.com/epg.xml.gz"'
+    attrs: {},
+    raw: '#EXTM3U x-tvg-url=""'
   },
   items: [
     {
-      name: 'CGTN Documentary',
+      name: 'Addis TV (720p)',
       tvg: {
-        id: '',
+        id: 'AddisTV.et',
         name: '',
-        language: 'Chinese',
-        country: 'CN',
-        logo: 'https://i.imgur.com/TSG6WBy.png',
+        logo: 'https://i.imgur.com/KAg6MOI.png',
         url: '',
+        rec: ''
       },
-      group: { title: 'Documentary' },
-      url: 'https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8',
-      raw:
-        '#EXTINF:-1 tvg-id="" tvg-name="" tvg-language="Chinese" tvg-logo="https://i.imgur.com/TSG6WBy.png" tvg-country="CN" tvg-url="" group-title="Documentary",CGTN Documentary\n' +
-        'https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8',
+      group: {
+        title: ''
+      },
+      http: {
+        referrer: '',
+        'user-agent': ''
+      },
+      url: 'https://rrsatrtmp.tulix.tv/addis1/addis1multi.smil/playlist.m3u8',
+      raw: '#EXTINF:-1 tvg-id="AddisTV.et" tvg-logo="https://i.imgur.com/KAg6MOI.png" group-title="Undefined",Addis TV (720p)\\r\\nhttps://rrsatrtmp.tulix.tv/addis1/addis1multi.smil/playlist.m3u8',
+      line: 2,
+      catchup: {
+        type: '',
+        days: '',
+        source: ''
+      },
+      timeshift: '',
       status: {
         ok: false,
-        reason: 'Timed out'
+        code: 'HTTP_REQUEST_TIMEOUT',
+        message: 'HTTP 408 Request Timeout',
       }
-    }
+    },
+    //...
   ]
 }
 ```
 
+### Error codes
+
+A full list of the error codes used and their descriptions can be found [here](.readme/errors.md).
+
 ## Contribution
 
-If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/detroitenglish/iptv-checker-module/issues) or a [pull request](https://github.com/detroitenglish/iptv-checker-module/pulls).
+If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/freearhey/iptv-checker/issues) or a [pull request](https://github.com/freearhey/iptv-checker/pulls).
 
 ## License
 
