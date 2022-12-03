@@ -1,0 +1,52 @@
+body, html {
+	height: 100%;
+  }
+body{
+	font-family: 'Oswald', sans-serif;
+}
+h1{
+	font-family: 'Bowlby One SC', cursive;
+ }
+
+.like-img{
+width: 15%;
+}
+.view-img{
+	width: 10%;
+}
+.like-img-videos{
+width: 15%;
+}
+.view-img-videos{
+	width: 10%;
+}
+
+.like-span{
+	font-size: large;
+}
+.view-span{
+	font-size: large;
+}
+@media screen and (min-width: 350px) {
+	.like-img{
+		width: 10%;
+		}
+		.view-img{
+			width: 9%;
+		}
+}
+@media screen and (min-width: 768px) {
+	.like-img{
+		width: 6%;
+		}
+		.view-img{
+			width: 7%;
+		}
+
+		.like-img-videos{
+			width: 15%;
+			}
+			.view-img-videos{
+				width: 10%;
+			}
+}

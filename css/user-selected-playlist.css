@@ -1,0 +1,19 @@
+
+.phone-playlist-video-description-collapse-btn-a::after{
+    position: absolute;
+	right: 20px;
+    top: 20px;
+}
+.phone-playlist-video-description-collapse-btn-p{
+	margin: 0;
+	text-align: start;
+}
+.phone-playlist-videos-collapse-btn-a::after{
+    position: absolute;
+    right: 30px;
+    top: 32px;
+}
+.phone-playlist-videos-collapse-btn-p{
+	margin: 0;
+	text-align: start;
+}
