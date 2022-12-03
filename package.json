@@ -1,27 +1,66 @@
 {
-  "name": "painelip",
-  "version": "1.1",
-  "description": "non official Xtream-Codes IPTV SDK for javascript and NodeJS",
-  "author": "Bruno Carvalho de Araujo <brunocarvalhodearaujo@gmail.com>, Izumi-No <kevynmiguel@gmail.com>",
+  "name": "iptv-checker-module",
+  "version": "2.0.5",
+  "description": "Check the status of IPTV channels in an .m3u playlist file",
   "main": "src/index.js",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "bluebird": "3.5.4",
-    "body-parser": "1.19.0",
-    "cors": "2.8.5",
-    "express": "^4.17.1",
-    "fetch-everywhere": "^1.0.5",
-    "lodash.pickby": "4.6.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "npx eslint ./src/**/*.js ./test/*.js",
+    "test": "npx ava",
+    "prePush": "npm-run-all -p lint test"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
-    "url": "https://github.com/Izumi-No/react-api",
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/detroitenglish/iptv-checker-module.git"
   },
-  "scripts": {
-    "start": "node index.js ",
-    "start-all": "concurrently \"node index.js\" \"cd app && yarn start\""
+  "author": "Dave Willenberg <dave@detroit-english.de>",
+  "license": "MIT",
+  "homepage": "https://github.com/detroitenglish/iptv-checker-module/blob/master/README.md",
+  "keywords": [
+    "iptv",
+    "m3u",
+    "m3u8",
+    "checker",
+    "playlists"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "colors": "^1.4.0",
+    "command-exists": "^1.2.9",
+    "iptv-playlist-parser": "^0.5.4",
+    "nanoid": "^3.1.10",
+    "valid-url": "^1.0.9"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "ava": "^3.9.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "ava": {
+    "failFast": true,
+    "concurrency": 2,
+    "timeout": "1m",
+    "files": [
+      "test/*.test.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prePush"
+    }
+  }
 }
