@@ -1,180 +1,107 @@
-# IPTV Checker [![Build Status](https://app.travis-ci.com/freearhey/iptv-checker.svg?branch=master)](https://app.travis-ci.com/freearhey/iptv-checker)
+# iptv-playlist-parser [![Build Status](https://app.travis-ci.com/freearhey/iptv-playlist-parser.svg?branch=master)](https://app.travis-ci.com/freearhey/iptv-playlist-parser)
 
-Node.js CLI tool for checking links in IPTV playlists.
+It parses IPTV playlist and converts it to a regular JavaScript object.
 
-This tool is based on the `ffmpeg` library, so you need to install it on your computer first. You can find the right installer for your system here: https://www.ffmpeg.org/download.html
+## Installation
+
+```sh
+npm install iptv-playlist-parser
+```
 
 ## Usage
 
-### CLI
-
-```sh
-npm install -g iptv-checker
-```
-
-#### Check local playlist file:
-
-```sh
-iptv-checker /path-to-playlist/example.m3u
-```
-
-#### Check playlist URL:
-
-```sh
-iptv-checker https://some-playlist.lol/list.m3u
-```
-
-#### Pipe playlist from `stdin`:
-
-```sh
-cat ~/some-playlist.m3u | iptv-checker
-```
-
-Arguments:
-
-- `-o, --output`: change default output directory
-- `-t, --timeout`: specifies the number of milliseconds before the request will be aborted (default to 60000)
-- `-a, --user-agent`: set custom HTTP User-Agent
-- `-k, --insecure`: allow insecure connections when using SSL
-- `-p, --parallel`: Batch size of channels to check concurrently (default to 1)
-
-### Module
-
-```sh
-npm install iptv-checker
-```
+### From string
 
 ```js
-var checker = require('iptv-checker')
+const parser = require('iptv-playlist-parser')
+// import parser from 'iptv-playlist-parser'
 
-// using playlist url
-checker.checkPlaylist('https://some-playlist.lol/list.m3u').then(results => {
-  console.log(results)
-})
+const playlist = `#EXTM3U x-tvg-url="http://example.com/epg.xml.gz"
+#EXTINF:-1 tvg-id="cnn.us" tvg-name="CNN" tvg-url="http://195.154.221.171/epg/guide.xml.gz" timeshift="3" catchup="shift" catchup-days="3" catchup-source="https://m3u-server/hls-apple-s4-c494-abcdef.m3u8?utc=325234234&lutc=3123125324" tvg-logo="http://example.com/logo.png" group-title="News",CNN (US)
+#EXTGRP:News
+#EXTVLCOPT:http-referrer=http://example.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5)
+http://example.com/stream.m3u8`
 
-// using local path
-checker.checkPlaylist('path/to/playlist.m3u').then(results => {
-  console.log(results)
-})
+const result = parser.parse(playlist)
 
-// using playlist as string
-checker.checkPlaylist(string).then(results => {
-  console.log(results)
-})
+console.log(result)
 ```
 
-#### Results
+### From file
 
-_On success:_
+```js
+const fs = require('fs')
+const parser = require('iptv-playlist-parser')
+
+const playlist = fs.readFileSync('playlist.m3u', 'utf8')
+
+const result = parser.parse(playlist)
+
+console.log(result)
+```
+
+### From URL
+
+```js
+const https = require('https')
+const parser = require('iptv-playlist-parser')
+
+https
+  .get('https://example.com/playlist.m3u', res => {
+    let data = []
+
+    res.on('data', chunk => {
+      data.push(chunk)
+    })
+
+    res.on('end', () => {
+      const playlist = Buffer.concat(data).toString()
+
+      const result = parser.parse(playlist)
+
+      console.log(result)
+    })
+  })
+  .on('error', err => {
+    console.error(err.message)
+  })
+```
+
+## Output
 
 ```js
 {
   header: {
-    attrs: {},
-    raw: '#EXTM3U x-tvg-url=""'
+    attrs: {
+      'x-tvg-url': 'http://example.com/epg.xml.gz'
+    },
+    raw: '#EXTM3U x-tvg-url="http://example.com/epg.xml.gz"'
   },
   items: [
     {
-      name: 'KBSV/AssyriaSat (720p) [Not 24/7]',
+      name: 'CNN (US)',
       tvg: {
-        id: 'KBSVAssyriaSat.us',
-        name: '',
-        logo: 'https://i.imgur.com/zEWSSdf.jpg',
-        url: '',
-        rec: ''
+        id: 'cnn.us',
+        name: 'CNN',
+        url: 'http://195.154.221.171/epg/guide.xml.gz',
+        logo: 'http://example.com/logo.png'
       },
       group: {
-        title: 'General'
+        title: 'News'
       },
       http: {
-        referrer: '',
-        'user-agent': ''
+        referrer: 'http://example.com/',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5)'
       },
-      url: 'http://66.242.170.53/hls/live/temp/index.m3u8',
-      raw: '#EXTINF:-1 tvg-id="KBSVAssyriaSat.us" tvg-logo="https://i.imgur.com/zEWSSdf.jpg" group-title="General",KBSV/AssyriaSat (720p) [Not 24/7]\r\nhttp://66.242.170.53/hls/live/temp/index.m3u8',
+      url: 'http://example.com/stream.m3u8',
+      raw: '#EXTINF:-1 tvg-id="cnn.us" tvg-name="CNN" tvg-url="http://195.154.221.171/epg/guide.xml.gz" tvg-logo="http://example.com/logo.png" group-title="News",CNN (US)\n#EXTVLCOPT:http-referrer=http://example.com/\n#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5)\nhttp://example.com/stream.m3u8',
       line: 2,
+      timeshift: '3',
       catchup: {
-        type: '',
-        days: '',
-        source: ''
-      },
-      timeshift: '',
-      status: {
-        ok: true,
-        metadata: {
-          streams: [
-            {
-              index: 0,
-              codec_name: 'h264',
-              codec_long_name: 'H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10',
-              profile: 'High',
-              codec_type: 'video',
-              codec_tag_string: '[27][0][0][0]',
-              codec_tag: '0x001b',
-              width: 1280,
-              height: 720,
-              coded_width: 1280,
-              coded_height: 720,
-              closed_captions: 0,
-              has_b_frames: 2,
-              pix_fmt: 'yuv420p',
-              level: 31,
-              chroma_location: 'left',
-              refs: 1,
-              is_avc: 'false',
-              nal_length_size: '0',
-              r_frame_rate: '30/1',
-              avg_frame_rate: '0/0',
-              time_base: '1/90000',
-              start_pts: 943358850,
-              start_time: '10481.765000',
-              bits_per_raw_sample: '8',
-              disposition: {
-                default: 0,
-                dub: 0,
-                original: 0,
-                comment: 0,
-                lyrics: 0,
-                karaoke: 0,
-                forced: 0,
-                hearing_impaired: 0,
-                visual_impaired: 0,
-                clean_effects: 0,
-                attached_pic: 0,
-                timed_thumbnails: 0
-              },
-              tags: {
-                variant_bitrate: '400000'
-              }
-            },
-            //...
-          ],
-          format: {
-            filename: 'http://66.242.170.53/hls/live/temp/index.m3u8',
-            nb_streams: 2,
-            nb_programs: 1,
-            format_name: 'hls',
-            format_long_name: 'Apple HTTP Live Streaming',
-            start_time: '10481.560589',
-            size: '214',
-            probe_score: 100
-          },
-          requests: [
-            {
-              method: 'GET',
-              url: 'http://66.242.170.53/hls/live/temp/index.m3u8',
-              headers: {
-                'User-Agent': 'Lavf/58.76.100',
-                Accept: '*/*',
-                Range: 'bytes=0-',
-                Connection: 'close',
-                Host: '66.242.170.53',
-                'Icy-MetaData': '1'
-              }
-            },
-            //...
-          ]
-        }
+        type: 'shift',
+        source: 'https://m3u-server/hls-apple-s4-c494-abcdef.m3u8?utc=325234234&lutc=3123125324',
+        days: '3'
       }
     },
     //...
@@ -182,59 +109,16 @@ _On success:_
 }
 ```
 
-_On error:_
+## Testing
 
-```js
-{
-  header: {
-    attrs: {},
-    raw: '#EXTM3U x-tvg-url=""'
-  },
-  items: [
-    {
-      name: 'Addis TV (720p)',
-      tvg: {
-        id: 'AddisTV.et',
-        name: '',
-        logo: 'https://i.imgur.com/KAg6MOI.png',
-        url: '',
-        rec: ''
-      },
-      group: {
-        title: ''
-      },
-      http: {
-        referrer: '',
-        'user-agent': ''
-      },
-      url: 'https://rrsatrtmp.tulix.tv/addis1/addis1multi.smil/playlist.m3u8',
-      raw: '#EXTINF:-1 tvg-id="AddisTV.et" tvg-logo="https://i.imgur.com/KAg6MOI.png" group-title="Undefined",Addis TV (720p)\\r\\nhttps://rrsatrtmp.tulix.tv/addis1/addis1multi.smil/playlist.m3u8',
-      line: 2,
-      catchup: {
-        type: '',
-        days: '',
-        source: ''
-      },
-      timeshift: '',
-      status: {
-        ok: false,
-        code: 'HTTP_REQUEST_TIMEOUT',
-        message: 'HTTP 408 Request Timeout',
-      }
-    },
-    //...
-  ]
-}
+```sh
+npm test
 ```
-
-### Error codes
-
-A full list of the error codes used and their descriptions can be found [here](.readme/errors.md).
 
 ## Contribution
 
-If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/freearhey/iptv-checker/issues) or a [pull request](https://github.com/freearhey/iptv-checker/pulls).
+If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/freearhey/iptv-playlist-parser/issues) or a [pull request](https://github.com/freearhey/iptv-playlist-parser/pulls).
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](LICENSE)
